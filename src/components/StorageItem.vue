@@ -1,7 +1,7 @@
-<!--单位信息-->
+<!--出库信息-->
 <template>
-  <div class="company">
-   <ul class="companyItems">
+  <div class="storage">
+   <ul class="storafeItems">
         <li v-for="item in items" >
           <a href="" class="companyItem" v-bind:title=item>
             {{item}}

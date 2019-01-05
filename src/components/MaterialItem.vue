@@ -1,3 +1,4 @@
+<!--物料信息-->
 <template>
   <div class="material">
    <ul>
