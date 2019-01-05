@@ -6,6 +6,7 @@ import CompanyItem from '@/components/CompanyItem'
 import StorageItem from '@/components/StorageItem'
 import MenuItem from '@/components/MenuItem'
 import TitleLeft from '@/components/TitleLeft'
+import TitleRight from '@/components/TitleRight'
 
 Vue.use(Router)
 
@@ -42,6 +43,12 @@ export default new Router({
     },
     {
       path: '/',
+      name: 'TitleRight',
+      component: TitleRight
+
+    },
+    {
+      path: '/l',
       name: 'TitleLeft',
       component: TitleLeft
 
