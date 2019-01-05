@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import MaterialItem from '@/components/MaterialItem'
-import CompanyItem from '@/components/companyItem'
+import CompanyItem from '@/components/CompanyItem'
+import StorageItem from '@/components/StorageItem'
 
 Vue.use(Router)
 
@@ -20,9 +21,15 @@ export default new Router({
 
     },
     {
-      path: '/',
+      path: '/b',
       name: 'CompanyItem',
       component: CompanyItem
+
+    },
+    {
+      path: '/',
+      name: 'StorageItem',
+      component: StorageItem
 
     }
   ]
