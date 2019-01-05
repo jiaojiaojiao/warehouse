@@ -5,6 +5,7 @@ import MaterialItem from '@/components/MaterialItem'
 import CompanyItem from '@/components/CompanyItem'
 import StorageItem from '@/components/StorageItem'
 import MenuItem from '@/components/MenuItem'
+import TitleLeft from '@/components/TitleLeft'
 
 Vue.use(Router)
 
@@ -34,9 +35,15 @@ export default new Router({
 
     },
     {
-      path: '/',
+      path: '/d',
       name: 'MenuItem',
       component: MenuItem
+
+    },
+    {
+      path: '/',
+      name: 'TitleLeft',
+      component: TitleLeft
 
     }
   ]
