@@ -16,7 +16,6 @@ export default new Router({
       path: '/',
       name: 'MaterialItem',
       component: MaterialItem
-
     }
   ]
 })
