@@ -3,6 +3,11 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import MaterialItem from '@/components/MaterialItem'
 import Material from '@/Material'
+import CompanyItem from '@/components/CompanyItem'
+import StorageItem from '@/components/StorageItem'
+import MenuItem from '@/components/MenuItem'
+import TitleLeft from '@/components/TitleLeft'
+import TitleRight from '@/components/TitleRight'
 
 Vue.use(Router)
 
@@ -14,7 +19,7 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/',
+      path: '/a',
       name: 'MaterialItem',
       component: MaterialItem
     },
@@ -22,6 +27,35 @@ export default new Router({
       path: '/material',
       name: 'Material',
       component: Material
+    },
+    {
+      path: '/b',
+      name: 'CompanyItem',
+      component: CompanyItem
+
+    },
+    {
+      path: '/C',
+      name: 'StorageItem',
+      component: StorageItem
+
+    },
+    {
+      path: '/d',
+      name: 'MenuItem',
+      component: MenuItem
+
+    },
+    {
+      path: '/',
+      name: 'TitleRight',
+      component: TitleRight
+
+    },
+    {
+      path: '/l',
+      name: 'TitleLeft',
+      component: TitleLeft
     }
   ]
 })

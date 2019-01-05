@@ -1,10 +1,11 @@
+<!--物料信息-->
 <template>
   <div class="material">
    <ul>
         <li v-for="item in items" class="materialItem">
          <div class="materialTitle">
            {{item.title}}
-           <div class="triangle_border_left titleLeft">
+           <div class="triangleBorder titleLeft">
              <!-- <span></span>-->
            </div>
          </div>
@@ -12,10 +13,14 @@
              <li v-for="name in item.name" class="materialName">
                物料名称：{{name}}
              </li>
-             <div class="triangle_border_left nameLeft">
+             <div class="triangleBorder nameLeft">
               <!-- <span></span>-->
              </div>
          </ul>
+
+          <div class="cycleBorder">
+            <!--<img src="assets/line.png" alt="" height="100px" width="100px">-->
+          </div>
         </li>
     </ul>
 
@@ -52,29 +57,39 @@ export default {
   }
   .materialTitle {
     font-size: 20px;
-    background-color: #05adbd;
+    background-color: #06afbf;
     /*display: bloc!**!k;*/
     padding: 5px 80px 5px 20px;
     display: inline-block;
     position: relative;
-    margin-bottom: 5px;
+    margin: 0 5px 5px 5px;
+
   }
   .titleLeft{
     border-width:0px 40px 43px 0 ;
   }
   .materialNames{
-    background-color: #05adbd;
+    background-color: #06afbf;
     position: relative;
     /*border: 2px #0f7ac5 solid;*/
     padding: 5px 5px 0 5px ;
+    margin: 0 5px 5px 5px;
   }
   .materialName {
     font-size: 18px;
     border-bottom: 2px #035e72 double;
     padding: 5px 5px 5px 20px;
   }
-  /*向左*/
-  .triangle_border_left{
+  /*分栏线*/
+  .cycleBorder{
+    margin-top: 10px;
+    height: 5px;
+    background: url("../assets/line.png") no-repeat;
+    background-size:100% 100%;
+
+  }
+  /*三角*/
+  .triangleBorder{
     width:0;
     height:0;
     border-style:solid;
