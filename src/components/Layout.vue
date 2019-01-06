@@ -24,18 +24,21 @@
     display: flex;
     flex-direction: column;
     background-color: #07337b;
+    background-image: no-repeat url('../assets/bg.png');
   }
   header{
-    height: 20rem;
+    height: 13rem;
   }
   main{
     flex: 1;
     display: flex;
-    padding: 5rem
+    padding: 0 2rem 2rem 2rem;
   }
   .left{
-    width: 38rem;
+    width: 22rem;
     margin-right: 2rem;
+    border: 2px solid #a8ffff;
+    border-radius: 1rem;
   }
   .right{
     flex: 1;
