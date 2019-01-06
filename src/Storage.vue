@@ -3,17 +3,20 @@
     <menu-item slot="header"></menu-item>
     <storage-item slot="left-bar"></storage-item>
     <company-item slot="bottom-bar"></company-item>
+    <house-item slot="container"></house-item>
   </layout>
 </template>
 <script>
   import menuItem from './components/MenuItem.vue'
   import StorageItem from './components/StorageItem.vue'
   import companyItem from './components/CompanyItem.vue'
+  import houseItem from './components/House.vue'
   export default {
     components: {
       menuItem,
       StorageItem,
-      companyItem
+      companyItem,
+      houseItem
     }
   }
 </script>

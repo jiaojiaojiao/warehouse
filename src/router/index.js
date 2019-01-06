@@ -10,6 +10,7 @@ import TitleLeft from '@/components/TitleLeft'
 import TitleRight from '@/components/TitleRight'
 import Storage from '@/Storage'
 
+import House from '@/components/House'
 Vue.use(Router)
 
 export default new Router({
@@ -62,6 +63,11 @@ export default new Router({
       path: '/l',
       name: 'TitleLeft',
       component: TitleLeft
+    },
+    {
+      path: '/h',
+      name: 'House',
+      component: House
     }
   ]
 })
