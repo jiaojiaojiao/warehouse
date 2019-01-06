@@ -53,37 +53,37 @@ export default {
   }
   .materialItem{
     text-align: left;
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
   }
   .materialTitle {
-    font-size: 20px;
+    font-size: 1rem;
     background-color: #06afbf;
     /*display: bloc!**!k;*/
-    padding: 5px 80px 5px 20px;
+    padding: 1rem 8rem 1rem 2rem;
     display: inline-block;
     position: relative;
-    margin: 0 5px 5px 5px;
+    margin: 0 0.5rem 0.5rem 0.5rem;
 
   }
   .titleLeft{
-    border-width:0px 40px 43px 0 ;
+    border-width:0px 4rem 4.3rem 0 ;
   }
   .materialNames{
     background-color: #06afbf;
     position: relative;
     /*border: 2px #0f7ac5 solid;*/
-    padding: 5px 5px 0 5px ;
-    margin: 0 5px 5px 5px;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    margin: 0 0.5rem 0.5rem 0.5rem;
   }
   .materialName {
-    font-size: 18px;
-    border-bottom: 2px #035e72 double;
-    padding: 5px 5px 5px 20px;
+    font-size: 1rem;
+    border-bottom: 0.2rem #035e72 double;
+    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
   }
   /*分栏线*/
   .cycleBorder{
-    margin-top: 10px;
-    height: 5px;
+    margin-top: 1rem;
+    height: 0.5rem;
     background: url("../assets/line.png") no-repeat;
     background-size:100% 100%;
 
@@ -103,7 +103,7 @@ export default {
     right: -2px;
   }
   .nameLeft{
-    border-width:0px 18px 18px 0;
+    border-width:0px 1.8rem 1.8rem 0;
   }
  /* .triangle_border_left span{
     display:block;

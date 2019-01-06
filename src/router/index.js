@@ -9,23 +9,19 @@ import MenuItem from '@/components/MenuItem'
 import TitleLeft from '@/components/TitleLeft'
 import TitleRight from '@/components/TitleRight'
 import Storage from '@/Storage'
-
+import House from '@/components/House'
+import Ma from '@/Ma'
 Vue.use(Router)
 
 export default new Router({
   routes: [
+   /* {
+      path: '/m',
+      name: 'Ma',
+      component: Ma
+    },*/
     {
-      path: '/i',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
-    {
-      path: '/a',
-      name: 'MaterialItem',
-      component: MaterialItem
-    },
-    {
-      path: '/material',
+      path: '/',
       name: 'Material',
       component: Material
     },
@@ -33,8 +29,8 @@ export default new Router({
       path: '/storage',
       name: 'Storage',
       component: Storage
-    },
-    {
+    }
+    /* {
       path: '/b',
       name: 'CompanyItem',
       component: CompanyItem
@@ -47,7 +43,7 @@ export default new Router({
 
     },
     {
-      path: '/d',
+     path: '/d',
       name: 'MenuItem',
       component: MenuItem
 
@@ -62,6 +58,11 @@ export default new Router({
       path: '/l',
       name: 'TitleLeft',
       component: TitleLeft
-    }
+    },
+    {
+      path: '/h',
+      name: 'House',
+      component: House
+    }*/
   ]
 })

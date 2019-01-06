@@ -16,7 +16,7 @@ export default {
   name: 'MaterialItem',
   data () {
     return {
-       items: ['金瓜子科技发展（北京）有限公司','京东数字科技控股有限公司','上海基分文化传播有限公司','北京锤子数码科技有限公司','北京故宫文化传播有限公司','京千橡网景科技发展有限公司','重庆大学']
+       items: ['金瓜子科技发展（北京）有限公司','京东数字科技控股有限公司','上海基分文化传播有限公司','北京锤子数码科技有限公司','北京故宫文化传播有限公司','京千橡网景科技发展有限公司','重庆大学','重庆理工大学']
     }
   }
 }
@@ -30,7 +30,7 @@ export default {
   .companyItems li{
     float: left;
     width: 25%;
-    height: 40px;
+    height: 3rem;
     border: 1px #4881ab solid;
     box-sizing: border-box;
   }
@@ -39,10 +39,10 @@ export default {
     display: inline-block;
     height: 100%;
     width: 100%;
-    line-height: 40px;
+    line-height: 3rem;
     background-color: #031793;
     color: #7ae1fa;
-    font-size: 20px;
+    font-size: 1rem;
     overflow: hidden;
     text-overflow:ellipsis;
     white-space: nowrap;

@@ -14,6 +14,9 @@
         <div class="bottom">
           <slot name="bottom-bar"></slot>
         </div>
+        <div class="dialog">
+          <slot name="dialog-bar"></slot>
+        </div>
       </div>
     </main>
   </div>
@@ -54,7 +57,7 @@
     flex: 1;
     border: 2px solid #a8ffff;
     border-radius: 1rem;
-    overflow: hidden;
+    padding: 2rem;
   }
   .bottom{
     margin-top: 1.5rem;
