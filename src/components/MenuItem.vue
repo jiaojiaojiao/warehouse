@@ -6,7 +6,7 @@
         <ul class="menuItems">
           <li v-for="item in items" class="menuItem" >
             <span class="menuLeft"><img src="../assets/output.png"></img></span>
-            <span class="menuLeft">
+            <span class="menuRight">
               <p>{{item}}</p>
               <p >INPUT</p>
             </span>
@@ -67,6 +67,13 @@ export default {
     color: #e4eeee;
     /*line-height: 40%;*/
     /*height: 40%;*/
+  }
+  .menuLeft{
+    height: 100%;
+  }
+  .menuRight{
+    height: auto;
+    word-break: break-all;
   }
   .menuItem span p{
     padding: 0px;

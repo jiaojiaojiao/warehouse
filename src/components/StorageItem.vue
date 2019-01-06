@@ -56,11 +56,11 @@ export default {
     list-style-type:none;
   }
   .storageItems{
-   padding: 5px;
-    background-color: #0a306b;
+   padding:0.5rem;
+    /*background-color: #0a306b;*/
   }
   .storageItem{
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
   display: inline-block;
   width: 100%;
   }
@@ -74,8 +74,8 @@ export default {
     float:left;
   }
   .itemMsg{
-    padding-left: 5px;
-    width:60%;
+    padding-left: 0.5rem;
+    width:66%;
     float:left;
     height:auto;
     word-break: break-all;
@@ -83,14 +83,17 @@ export default {
   .itemMsg p{
     background-color: #08249a ;
     color: #7ae1fa;
-    font-size: 16px;
+    font-size: 1rem;
     border: 1px #0f7ac5 solid;
+    padding: 0.25rem 0.5rem;
+    text-align: left;
   }
 
   /*分栏线*/
-  .cycleBorder{
-    margin-top: 10px;
-    height: 5px;
+  .cycleBorder
+  {
+    margin-top: 1rem;
+    height: 0.5rem;
     background: url("../assets/line.png") no-repeat;
     background-size:100% 100%;
     width: 100%;
