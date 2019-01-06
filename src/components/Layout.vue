@@ -26,16 +26,16 @@
     background-color: #07337b;
   }
   header{
-    height: 2rem;
+    height: 20rem;
   }
   main{
     flex: 1;
     display: flex;
-    padding: .5rem
+    padding: 5rem
   }
   .left{
-    width: 3.8rem;
-    margin-right: .2rem;
+    width: 38rem;
+    margin-right: 2rem;
   }
   .right{
     flex: 1;
@@ -46,7 +46,7 @@
     flex: 1
   }
   .bottom{
-    margin-top: .2rem;
-    height: 1rem;
+    margin-top: 2rem;
+    height: 10rem;
   }
 </style>
