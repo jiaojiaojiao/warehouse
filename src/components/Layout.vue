@@ -38,7 +38,7 @@
   .left{
     margin-right: 1.5rem;
     width: 22rem;
-    padding: 1rem;
+    padding: 1.2rem;
     border: 2px solid #a8ffff;
     border-radius: 1rem;
     background-color: #041f4f;
@@ -54,6 +54,7 @@
     flex: 1;
     border: 2px solid #a8ffff;
     border-radius: 1rem;
+    overflow: hidden;
   }
   .bottom{
     margin-top: 1.5rem;

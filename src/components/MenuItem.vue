@@ -14,7 +14,6 @@
         </ul>
         <div class="clear"></div>
       </div>
-
     </div>
   </div>
 </template>
@@ -36,11 +35,13 @@ export default {
     display: inline;
   }
   .menu{
+    height: 100%;
     /*background: no-repeat url('../assets/bg.png');*/
     /*width: 100%;*/
     /*height:5000px;*/
   }
   .menuTable{
+    height: 100%;
     background: url("../assets/menubg.png") no-repeat ;
     background-size: cover;
     text-align: center;

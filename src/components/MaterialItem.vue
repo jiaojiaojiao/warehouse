@@ -88,6 +88,9 @@ export default {
     background-size:100% 100%;
 
   }
+  .materialItem:last-child .cycleBorder{
+    display: none;
+  }
   /*三角*/
   .triangleBorder{
     width:0;
