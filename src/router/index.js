@@ -8,6 +8,7 @@ import StorageItem from '@/components/StorageItem'
 import MenuItem from '@/components/MenuItem'
 import TitleLeft from '@/components/TitleLeft'
 import TitleRight from '@/components/TitleRight'
+import Storage from '@/Storage'
 
 Vue.use(Router)
 
@@ -27,6 +28,11 @@ export default new Router({
       path: '/material',
       name: 'Material',
       component: Material
+    },
+    {
+      path: '/storage',
+      name: 'Storage',
+      component: Storage
     },
     {
       path: '/b',

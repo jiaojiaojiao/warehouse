@@ -36,9 +36,9 @@ export default {
     display: inline;
   }
   .menu{
-    background: no-repeat url('../assets/bg.png');
-    width: 100%;
-    height:5000px;
+    /*background: no-repeat url('../assets/bg.png');*/
+    /*width: 100%;*/
+    /*height:5000px;*/
   }
   .menuTable{
     background: url("../assets/menubg.png") no-repeat ;
