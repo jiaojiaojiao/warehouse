@@ -2,27 +2,27 @@
 <template>
   <div class="material">
    <ul>
-        <li v-for="item in items" class="materialItem">
-         <div class="materialTitle">
-           {{item.title}}
-           <div class="triangleBorder titleLeft">
-             <!-- <span></span>-->
-           </div>
-         </div>
-         <ul class="materialNames">
-             <li v-for="name in item.name" class="materialName">
-               物料名称：{{name}}
-             </li>
-             <div class="triangleBorder nameLeft">
-              <!-- <span></span>-->
-             </div>
-         </ul>
-
-          <div class="cycleBorder">
-            <!--<img src="assets/line.png" alt="" height="100px" width="100px">-->
+      <li v-for="item in items" class="materialItem">
+        <div class="materialTitle">
+          {{item.title}}
+          <div class="triangleBorder titleLeft">
+            <!-- <span></span>-->
           </div>
-        </li>
-    </ul>
+        </div>
+        <ul class="materialNames">
+            <li v-for="name in item.name" class="materialName">
+              物料名称：{{name}}
+            </li>
+            <div class="triangleBorder nameLeft">
+            <!-- <span></span>-->
+            </div>
+        </ul>
+
+        <div class="cycleBorder">
+          <!--<img src="assets/line.png" alt="" height="100px" width="100px">-->
+        </div>
+      </li>
+  </ul>
 
   </div>
 </template>
