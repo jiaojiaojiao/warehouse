@@ -21,6 +21,7 @@
 <style scope>
   .layout{
     width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     background-color: #07337b;
@@ -35,13 +36,14 @@
     padding: 0 2rem 2rem 2rem;
   }
   .left{
+    margin-right: 1.5rem;
     width: 22rem;
     padding: 1rem;
-    margin-right: 2rem;
     border: 2px solid #a8ffff;
     border-radius: 1rem;
     background-color: #041f4f;
     box-sizing: border-box;
+    overflow-y: scroll;
   }
   .right{
     flex: 1;
@@ -49,10 +51,18 @@
     flex-direction: column;
   }
   .container{
-    flex: 1
+    flex: 1;
+    border: 2px solid #a8ffff;
+    border-radius: 1rem;
   }
   .bottom{
-    margin-top: 2rem;
+    margin-top: 1.5rem;
+    padding: 1rem;
     height: 10rem;
+    border: 2px solid #a8ffff;
+    border-radius: 1rem;
+    background-color: #041f4f;
+    box-sizing: border-box;
+    overflow-y: scroll;
   }
 </style>

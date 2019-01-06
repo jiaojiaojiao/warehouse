@@ -29,9 +29,10 @@ export default {
   }
   .companyItems li{
     float: left;
-    width: 255px;
+    width: 25%;
     height: 40px;
     border: 1px #4881ab solid;
+    box-sizing: border-box;
   }
   a{
     text-decoration:none;
@@ -45,7 +46,6 @@ export default {
     overflow: hidden;
     text-overflow:ellipsis;
     white-space: nowrap;
-
   }
   .companyItem:hover{
     background: no-repeat url('../assets/companyBackground.png');
