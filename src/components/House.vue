@@ -5,7 +5,7 @@
       <li v-for="item in items"  class="houseItem" :class="item.style">
           <ul class="box">
             <li class=" boxItem" v-for="c in item.column" :class="c.style" >
-              <a  @mouseenter="openMask" href="javascript:void(0);">
+              <a  @click="openMask()" href="javascript:void(0);">
                 <img src="../assets/box.png" alt="">
               </a>
             </li>

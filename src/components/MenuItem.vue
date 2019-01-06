@@ -60,8 +60,8 @@ export default {
     margin-right: 4rem;
   }
   .menuItem img{
-    width: 50%;
-    height: 50%;
+    width: 4rem;
+    height: 4rem;
   }
   .menuItem span{
     display: inline-block;
