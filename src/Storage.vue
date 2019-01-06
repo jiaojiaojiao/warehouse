@@ -4,6 +4,8 @@
     <storage-item slot="left-bar"></storage-item>
     <company-item slot="bottom-bar"></company-item>
     <house-item slot="container"></house-item>
+    <dialog-bar slot="dialog-bar"></dialog-bar>
+
   </layout>
 </template>
 <script>
@@ -11,12 +13,14 @@
   import StorageItem from './components/StorageItem.vue'
   import companyItem from './components/CompanyItem.vue'
   import houseItem from './components/House.vue'
+  import dialogBar from './components/Dialog.vue'
   export default {
     components: {
       menuItem,
       StorageItem,
       companyItem,
-      houseItem
+      houseItem,
+      dialogBar
     }
   }
 </script>

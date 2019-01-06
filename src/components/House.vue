@@ -5,7 +5,7 @@
       <li v-for="item in items"  class="houseItem" :class="item.style">
           <ul class="box">
             <li class=" boxItem" v-for="c in item.column" :class="c.style" >
-              <a href="">
+              <a  @mouseenter="openMask" href="javascript:void(0);">
                 <img src="../assets/box.png" alt="">
               </a>
             </li>
@@ -28,10 +28,15 @@
   </div>
 </template>
 <script>
+  import dialogBar from './Dialog.vue'
   export default {
+    components:{
+      'dialog-bar': dialogBar,
+    },
     name: 'House',
     data () {
       return {
+        sendVal: false,
         items : [
           {
             column:
@@ -246,6 +251,20 @@
           }
         ]
       }
+    } ,
+    methods:{
+      openMask(index){
+        this.sendVal = true;
+      },
+      clickCancel(){
+        console.log('点击了取消');
+      },
+      clickDanger(){
+        console.log('这里是danger回调')
+      },
+      clickConfirm(){
+        console.log('点击了confirm');
+      }
     }
   }
 </script>
@@ -292,7 +311,7 @@
      opacity: 1;
    }
    50%{
-     transform: scale(1.5);
+     transform: scale(1.2);
      opacity: 0.5;   /*圆形放大的同时，透明度逐渐减小为0*/
    }
    100%{

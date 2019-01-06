@@ -5,11 +5,13 @@
       <div class="menuContent">
         <ul class="menuItems">
           <li v-for="item in items" class="menuItem" >
+            <a href="javascript:void(0);">
             <span class="menuLeft"><img src="../assets/output.png"></img></span>
             <span class="menuRight">
               <p>{{item}}</p>
               <p >INPUT</p>
             </span>
+            </a>
           </li>
         </ul>
         <div class="clear"></div>
@@ -48,14 +50,14 @@ export default {
 .menuContent{
   text-align: center;
   display: inline-block;
-  margin: 40px 0;
+  margin: 4rem 0;
 }
   .clear{
     clear: both;
   }
   .menuItem{
     float: left;
-    margin-right: 40px;
+    margin-right: 4rem;
   }
   .menuItem img{
     width: 50%;
@@ -76,7 +78,7 @@ export default {
     word-break: break-all;
   }
   .menuItem span p{
-    padding: 0px;
+    padding: 0.5rem;
     margin: 0px;
     font-weight: 600;
   }

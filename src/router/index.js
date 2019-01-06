@@ -9,12 +9,17 @@ import MenuItem from '@/components/MenuItem'
 import TitleLeft from '@/components/TitleLeft'
 import TitleRight from '@/components/TitleRight'
 import Storage from '@/Storage'
-
 import House from '@/components/House'
+import Ma from '@/Ma'
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/m',
+      name: 'Ma',
+      component: Ma
+    },
     {
       path: '/i',
       name: 'HelloWorld',
