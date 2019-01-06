@@ -36,9 +36,12 @@
   }
   .left{
     width: 22rem;
+    padding: 1rem;
     margin-right: 2rem;
     border: 2px solid #a8ffff;
     border-radius: 1rem;
+    background-color: #041f4f;
+    box-sizing: border-box;
   }
   .right{
     flex: 1;

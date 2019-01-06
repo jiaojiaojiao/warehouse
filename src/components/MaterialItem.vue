@@ -93,7 +93,7 @@ export default {
     width:0;
     height:0;
     border-style:solid;
-    border-color:transparent #fff transparent transparent;/*透明 灰 透明 透明 */
+    border-color:transparent #041f4f transparent transparent;/*透明 灰 透明 透明 */
     /*margin:40px auto;*/
     position:absolute;
     top:-2px;
