@@ -55,6 +55,13 @@ export default {
   ul{
     list-style-type:none;
   }
+  .storage{
+
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y:scroll;
+  }
   .storageItems{
    padding:0.5rem;
     /*background-color: #0a306b;*/
