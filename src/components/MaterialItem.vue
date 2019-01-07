@@ -24,6 +24,7 @@
       </li>
   </ul>
 
+    <div class="clear"></div>
   </div>
 </template>
 <script>
@@ -51,6 +52,15 @@ export default {
   ul{
     list-style-type:none;
   }
+  .clear{
+    clear: both;
+  }
+  .material{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y:scroll;
+  }
   .materialItem{
     text-align: left;
     margin-bottom: 1.5rem;
@@ -59,7 +69,7 @@ export default {
     font-size: 1rem;
     background-color: #06afbf;
     /*display: bloc!**!k;*/
-    padding: 1rem 8rem 1rem 2rem;
+    padding: 1rem 5rem 1rem 2rem;
     display: inline-block;
     position: relative;
     margin: 0 0.5rem 0.5rem 0.5rem;
@@ -96,7 +106,7 @@ export default {
     width:0;
     height:0;
     border-style:solid;
-    border-color:transparent #041f4f transparent transparent;/*透明 灰 透明 透明 */
+    border-color:transparent #022064 transparent transparent;/*透明 灰 透明 透明 */
     /*margin:40px auto;*/
     position:absolute;
     top:-2px;

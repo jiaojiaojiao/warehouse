@@ -11,12 +11,16 @@
       >Your browser does not support the HTML5 canvas tag.</canvas>
     </template>
     <company-item slot="bottom-bar"></company-item>
+    <title-left slot="left-menu"></title-left>
+    <title-right slot="right-menu"></title-right>
   </layout>
 </template>
 <script>
 import menuItem from "./components/MenuItem.vue";
 import materialItem from "./components/MaterialItem.vue";
 import companyItem from "./components/CompanyItem.vue";
+import titleLeft from './components/TitleLeft.vue';
+import titleRight from './components/TitleRight.vue';
 export default {
   data() {
     return {
@@ -27,7 +31,9 @@ export default {
   components: {
     menuItem,
     materialItem,
-    companyItem
+    companyItem,
+    titleRight,
+    titleLeft
   },
   mounted() {
     window.addEventListener("resize", this.changeCanvas);
