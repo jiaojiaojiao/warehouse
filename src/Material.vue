@@ -24,7 +24,7 @@ import titleRight from './components/TitleRight.vue';
 export default {
   data() {
     return {
-      canvasWidth: document.documentElement.clientWidth - 305,
+      canvasWidth: document.documentElement.clientWidth - 355,
       canvasHeight: document.documentElement.clientHeight - 295
     };
   },
@@ -42,12 +42,12 @@ export default {
     const nImg = new Image();
     nImg.src = "/static/map.jpg";
     nImg.onload = function() {
-      ctx.drawImage(nImg, 0, 0, document.documentElement.clientWidth - 305, document.documentElement.clientHeight - 295);
+      ctx.drawImage(nImg, 0, 0, document.documentElement.clientWidth - 355, document.documentElement.clientHeight - 295);
     };
   },
   methods: {
     changeCanvas() {
-      this.canvasWidth = document.documentElement.clientWidth - 305;
+      this.canvasWidth = document.documentElement.clientWidth - 355;
       this.canvasHeight = document.documentElement.clientHeight - 295;
     }
   }
