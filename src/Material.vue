@@ -2,14 +2,15 @@
   <layout>
     <menu-item slot="header"></menu-item>
     <material-item slot="left-bar"></material-item>
-    <template slot="container">
-      <canvas
+    <div slot="container" class="map">
+      <!-- <canvas
         id="myCanvas"
         :width="canvasWidth"
         :height="canvasHeight"
         style="border:1px solid #d3d3d3;background:#042263;"
-      >Your browser does not support the HTML5 canvas tag.</canvas>
-    </template>
+      >Your browser does not support the HTML5 canvas tag.</canvas> -->
+      <img src="/static/map.jpg" alt="" id="hideImg">
+    </div>
     <company-item slot="bottom-bar"></company-item>
     <title-left slot="left-menu"></title-left>
     <title-right slot="right-menu"></title-right>
@@ -37,13 +38,19 @@ export default {
   },
   mounted() {
     window.addEventListener("resize", this.changeCanvas);
-    const canvas = document.getElementById("myCanvas");
-    const ctx = canvas.getContext("2d");
-    const nImg = new Image();
-    nImg.src = "/static/map.jpg";
-    nImg.onload = function() {
-      ctx.drawImage(nImg, 0, 0, document.documentElement.clientWidth - 355, document.documentElement.clientHeight - 295);
-    };
+    // const canvasW = document.documentElement.clientWidth - 355;
+    // const canvas = document.getElementById("myCanvas");
+    // const ctx = canvas.getContext("2d");
+    // const nImg = new Image();
+    // let imgW = '';
+    // let imgH = '';
+    // nImg.src = "/static/map.jpg";
+    // nImg.onload = function() {
+    //   imgW = nImg.width;
+    //   imgH = nImg.height;
+    //   console.warn(imgH * canvasW / imgW)
+    //   ctx.drawImage(nImg, 0, 0, canvasW, imgH * canvasW / imgW);
+    // };
   },
   methods: {
     changeCanvas() {
@@ -53,3 +60,10 @@ export default {
   }
 };
 </script>
+<style scoped>
+  .map{}
+  .map img{
+    width: 100%;
+    height: auto;
+  }
+</style>

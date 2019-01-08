@@ -3,12 +3,12 @@
     <header>
       <slot name="header"></slot>
     </header>
-    <leftnmenu>
+    <div class="leftnmenu">
       <slot name="left-menu"></slot>
-    </leftnmenu>
-    <rightmenu>
+    </div>
+    <div class="rightmenu">
       <slot name="right-menu"></slot>
-    </rightmenu>
+    </div>
     <main>
       <div class="left">
           <slot name="left-bar"></slot>
@@ -39,21 +39,21 @@
     background-image: no-repeat url('../assets/bg.png');
   }
   header{
-    height: 13rem;
+    /* height: 13rem; */
   }
   main{
     flex: 1;
     display: flex;
     padding: 0 2rem 2rem 2rem;
   }
-  leftnmenu,rightmenu{
+  .leftnmenu,.rightmenu{
     position: fixed;
   }
-  leftnmenu{
+  .leftnmenu{
     top:8rem;
     left: 2rem;
   }
-  rightmenu{
+  .rightmenu{
     top:8rem;
     right: 2rem;
   }
@@ -65,8 +65,8 @@
     border-radius: 1rem;*/
     /*background-color: #041f4f;*/
     background: no-repeat url('../assets/leftbg.png') ;
-
     background-size: 100% 100%;
+    overflow-y: auto;
   }
   .right{
     flex: 1;
@@ -79,6 +79,7 @@
     border-radius: 1rem;*/
     padding: 2rem;
     position: relative;
+    overflow-y: hidden;
   }
   .top-line{
     position: absolute;
@@ -108,6 +109,6 @@
     border-radius: 1rem;
     background-color: #041f4f;
     box-sizing: border-box;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 </style>
