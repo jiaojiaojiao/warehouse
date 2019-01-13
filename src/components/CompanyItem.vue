@@ -30,7 +30,7 @@ export default {
   .companyItems li{
     float: left;
     width: 25%;
-    height: 3rem;
+    height: 3.5rem;
     border: 1px #4881ab solid;
     box-sizing: border-box;
   }
@@ -39,7 +39,7 @@ export default {
     display: inline-block;
     height: 100%;
     width: 100%;
-    line-height: 3rem;
+    line-height: 3.5rem;
     background-color: #031793;
     color: #7ae1fa;
     font-size: 1rem;

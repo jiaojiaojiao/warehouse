@@ -290,10 +290,16 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .houseContent,.computer {
+  .house{
+    height: 100%;
+    overflow-y: scroll;
+  }
+  .houseContent,.computerList {
     background-color: #18376a;
     opacity: 20%;
     border-radius: 2rem;
+    transform:rotate(15deg);
+    z-index: 1;
   }
   .computer{
     margin-top: 2rem;

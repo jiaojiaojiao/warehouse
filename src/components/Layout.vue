@@ -15,16 +15,17 @@
       </div>
       <div class="right">
         <div class="container">
-        <slot name="container"></slot>
+          <slot name="container"></slot>
           <div class="top-line"></div>
           <div class="bottom-line"></div>
         </div>
-        <div class="bottom">
-          <slot name="bottom-bar"></slot>
-        </div>
-        <div class="dialog">
+        <!--<div class="dialog">
           <slot name="dialog-bar"></slot>
-        </div>
+        </div>-->
+      </div>
+
+      <div class="bottom">
+        <slot name="bottom-bar"></slot>
       </div>
     </main>
   </div>
@@ -46,7 +47,7 @@
     display: flex;
     padding: 0 2rem 2rem 2rem;
   }
-  leftnmenu,rightmenu{
+  leftnmenu,rightmenu,.left,.container,.bottom{
     position: fixed;
   }
   leftnmenu{
@@ -58,31 +59,42 @@
     right: 2rem;
   }
   .left{
-    margin-right: 1.5rem;
+    top: 12rem;
+    bottom: 1rem;
     width: 22rem;
     padding: 1rem 1rem 3rem;
-    /*border: 1px solid #a8ffff;
-    border-radius: 1rem;*/
-    /*background-color: #041f4f;*/
     background: no-repeat url('../assets/leftbg.png') ;
-
     background-size: 100% 100%;
   }
   .right{
-    flex: 1;
+    /*position: fixed;
+    top: 12rem;
+    bottom: 12rem;
+    left: 27rem;
+    right: 1rem;*/
+/*    height: 100%;
+    overflow-y: scroll;*/
+
+    /*flex: 1;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;*/
   }
   .container{
+    position: fixed;
+    top: 12rem;
+    bottom: 12rem;
+    left: 27rem;
+    right: 1rem;
     flex: 1;
     /*border: 1px solid #a8ffff;*/
     border-radius: 2rem;
     padding: 2rem;
-    position: relative;
+    /*position: relative;*/
     background:repeat url('../assets/centerbg.png');
     filter:alpha(opacity=40); /*支持 IE 浏览器*/
     -moz-opacity:0.40; /*支持 FireFox 浏览器*/
     opacity:0.40; /*支持 Chrome, Opera, Safari 等浏览器*/
+    z-index: 2;
   }
   .top-line{
     position: absolute;
@@ -110,11 +122,15 @@
   .bottom{
     margin-top: 1.5rem;
     padding: 1rem;
-    height: 10rem;
+    height: 9rem;
     border: 2px solid #a8ffff;
     border-radius: 1rem;
     background-color: #041f4f;
     box-sizing: border-box;
     overflow-y: scroll;
+    position: fixed;
+    bottom: 1rem;
+    left: 27rem;
+    right: 1rem;
   }
 </style>
