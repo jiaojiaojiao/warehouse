@@ -3,15 +3,15 @@
     <header>
       <slot name="header"></slot>
     </header>
-    <leftnmenu>
+    <div class="leftnmenu">
       <slot name="left-menu"></slot>
-    </leftnmenu>
-    <rightmenu>
+    </div>
+    <div class="rightmenu">
       <slot name="right-menu"></slot>
-    </rightmenu>
+    </div>
     <main>
       <div class="left">
-          <slot name="left-bar"></slot>
+        <slot name="left-bar"></slot>
       </div>
       <div class="right">
         <div class="container">
@@ -19,13 +19,12 @@
           <div class="top-line"></div>
           <div class="bottom-line"></div>
         </div>
+        <div class="bottom">
+          <slot name="bottom-bar"></slot>
+        </div>
         <!--<div class="dialog">
           <slot name="dialog-bar"></slot>
         </div>-->
-      </div>
-
-      <div class="bottom">
-        <slot name="bottom-bar"></slot>
       </div>
     </main>
   </div>
@@ -40,97 +39,83 @@
     background-image: no-repeat url('../assets/bg.png');
   }
   header{
-    height: 13rem;
+    /* height: 13rem; */
   }
   main{
     flex: 1;
     display: flex;
     padding: 0 2rem 2rem 2rem;
   }
-  leftnmenu,rightmenu,.left,.container,.bottom{
+  .leftnmenu,.rightmenu{
     position: fixed;
   }
-  leftnmenu{
+  .leftnmenu{
     top:8rem;
     left: 2rem;
   }
-  rightmenu{
+  .rightmenu{
     top:8rem;
     right: 2rem;
   }
   .left{
-    top: 12rem;
-    bottom: 1rem;
+    margin-right: 1.5rem;
     width: 22rem;
     padding: 1rem 1rem 3rem;
+    /*border: 1px solid #a8ffff;
+    border-radius: 1rem;*/
+    /*background-color: #041f4f;*/
     background: no-repeat url('../assets/leftbg.png') ;
     background-size: 100% 100%;
+    overflow-y: auto;
   }
   .right{
-    /*position: fixed;
-    top: 12rem;
-    bottom: 12rem;
-    left: 27rem;
-    right: 1rem;*/
-/*    height: 100%;
-    overflow-y: scroll;*/
-
-    /*flex: 1;
+    flex: 1;
     display: flex;
-    flex-direction: column;*/
+    flex-direction: column;
   }
   .container{
-    position: fixed;
-    top: 12rem;
-    bottom: 12rem;
-    left: 27rem;
-    right: 1rem;
     flex: 1;
-    /*border: 1px solid #a8ffff;*/
-    border-radius: 2rem;
+    /*border: 1px solid #a8ffff;
+    border-radius: 1rem;*/
     padding: 2rem;
-    /*position: relative;*/
-    background:repeat url('../assets/centerbg.png');
-    filter:alpha(opacity=40); /*支持 IE 浏览器*/
-    -moz-opacity:0.40; /*支持 FireFox 浏览器*/
-    opacity:0.40; /*支持 Chrome, Opera, Safari 等浏览器*/
-    z-index: 2;
+    position: relative;
+    overflow-y: scroll;
+    background-color: rgba(0, 51, 95, .5);
+    /*background:repeat url('../assets/centerbg.png');
+    filter:alpha(opacity=40);
+    -moz-opacity:0.40;
+    opacity:0.40;
+    border-radius: 1rem;
+    padding: 1rem;*/
   }
   .top-line{
     position: absolute;
-    top: 0rem;
+    top: 3.2px;
     left: 0;
     right: 0;
     background: no-repeat url("../assets/upline.png");
     background-size: 100%;
     width:100%;
     height: 6.5rem;
-    filter:alpha(opacity=100); /*支持 IE 浏览器*/
-    -moz-opacity:1; /*支持 FireFox 浏览器*/
-    opacity:1; /*支持 Chrome, Opera, Safari 等浏览器*/
   }
   .bottom-line{
     position: absolute;
-    bottom: -1rem;
+    bottom: 0px;
     left: 0;
     right: 0;
-    background: no-repeat url("../assets/bottemline.png");
+    background: no-repeat url("../assets/bottemline.png") bottom;
     background-size: 100%;
     width:100%;
-    height: 8rem;
+    height: 6.5rem;
   }
   .bottom{
     margin-top: 1.5rem;
     padding: 1rem;
-    height: 9rem;
+    height: 10rem;
     border: 2px solid #a8ffff;
     border-radius: 1rem;
     background-color: #041f4f;
     box-sizing: border-box;
-    overflow-y: scroll;
-    position: fixed;
-    bottom: 1rem;
-    left: 27rem;
-    right: 1rem;
+    overflow-y: auto;
   }
 </style>

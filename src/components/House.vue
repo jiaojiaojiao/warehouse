@@ -28,6 +28,10 @@
       <div class="clear"></div>
     </ul>
     </div>
+
+    <div class="lineCom">
+      <img src="../assets/lineCop.png"></img>
+    </div>
     <div class="computer">
       <ul class="computerList">
         <li>
@@ -302,7 +306,7 @@
     z-index: 1;
   }
   .computer{
-    margin-top: 2rem;
+    /*margin-top: 2rem;*/
     text-align: center;
   }
   ul{
@@ -313,7 +317,7 @@
  }
   .houseItems{
     padding-left: 12rem;
-    padding-bottom: 10rem;
+    padding-bottom: 9rem;
     padding-top: 5rem;
     display: inline-block;
   }
@@ -337,30 +341,13 @@
    /*width: 4.5rem;*/
    /*height: 4.5rem;*/
    z-index: 0;
-   -webkit-animation: living 3s linear infinite;
  }
 
   .boxItem{
     margin-right: 2rem;
    /* margin-bottom: -3rem;*/
   }
- @keyframes living {
-   0%{
-     transform: scale(1);
-     opacity: 1;
-   }
-   50%{
-     transform: scale(1.2);
-     opacity: 0.5;   /*圆形放大的同时，透明度逐渐减小为0*/
-   }
-   100%{
-     transform: scale(1);
-     opacity: 1;
-   }
- }
-  /* .marginLeft{
-    margin-left: -3rem;
-  }*/
+
   .boxItem2 {
     margin-left: -5.4rem;
     margin-top: -4.1rem;
@@ -383,7 +370,7 @@
  }
   .computer img{
     width: 5rem;
-    height: 8rem;
+    height: 6rem;
   }
   .computerList{
     margin:0 auto;
