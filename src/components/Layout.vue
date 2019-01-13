@@ -80,6 +80,7 @@
     padding: 2rem;
     position: relative;
     overflow-y: hidden;
+    background-color: rgba(0, 51, 95, .5);
   }
   .top-line{
     position: absolute;
@@ -96,10 +97,10 @@
     bottom: 0px;
     left: 0;
     right: 0;
-    background: no-repeat url("../assets/bottemline.png");
+    background: no-repeat url("../assets/bottemline.png") bottom;
     background-size: 100%;
     width:100%;
-    height: 8rem;
+    height: 6.5rem;
   }
   .bottom{
     margin-top: 1.5rem;
