@@ -31,10 +31,10 @@ export default {
     float: left;
     width: 25%;
     height: 3.5rem;
-    border: 1px #4881ab solid;
     box-sizing: border-box;
   }
   a{
+    border: 2px #4881ab solid;
     text-decoration:none;
     display: inline-block;
     height: 100%;
