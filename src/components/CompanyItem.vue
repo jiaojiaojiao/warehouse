@@ -49,5 +49,6 @@ export default {
   }
   .companyItem:hover{
     background: no-repeat url('../assets/companyBackground.png');
+    background-size: cover;
   }
 </style>

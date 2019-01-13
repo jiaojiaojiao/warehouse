@@ -1,14 +1,14 @@
 .pulse {
 	position: absolute;
-	width: 40px;
-	height: 40px;
+	width: 4rem;
+	height: 4rem;
 	left: 0;
   top: 0;
   transform: translateX(-50%) translateY(-50%);
-	border: 8px solid #03fef9;
-	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
-	border-radius: 30px;
+	border: .8rem solid #03fef9;
+	-webkit-border-radius: 3rem;
+	-moz-border-radius: 3rem;
+	border-radius: 3rem;
   z-index: 1;
 	opacity: 0;
 }
