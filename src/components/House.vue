@@ -1,7 +1,8 @@
 <!--库房-->
 <template>
-  <div class="house">
-    <ul class="houseItems">
+  <div class="house ">
+    <div class="houseContent">
+    <ul class="houseItems clear">
       <li v-for="item in items"  class="houseItem" :class="item.style">
           <ul class="box">
             <li class=" boxItem" v-for="c in item.column" :class="c.style" >
@@ -9,6 +10,7 @@
                 <img src="../assets/box.png" alt="">
               </a>
             </li>
+
            <!-- <li class="boxItem2 boxItem">
               <a href=""><img src="../assets/box.png" alt=""></a>
             </li>
@@ -23,8 +25,23 @@
             </li>-->
           </ul>
       </li>
+      <div class="clear"></div>
     </ul>
-
+    </div>
+    <div class="computer">
+      <ul class="computerList">
+        <li>
+          <img src="../assets/computer.png" alt="">
+        </li>
+        <li>
+          <img src="../assets/computer.png" alt="">
+        </li>
+        <li>
+          <img src="../assets/computer.png" alt="">
+        </li>
+        <div class="clear"></div>
+      </ul>
+    </div>
   </div>
 </template>
 <script>
@@ -44,7 +61,8 @@
                 {
                   number:1,
                   style:''
-                },
+                }
+                ,
                 {
                   number:2,
                   style:'boxItem2'
@@ -63,7 +81,8 @@
                 }
             ],
             line:1
-          },
+          }
+          ,
           {
             column:
               [
@@ -271,27 +290,40 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
- /* .house{
-    background: url('../assets/bg.png');
-    width: 100%;
-    height: 2000px;
-  }*/
+  .houseContent,.computer {
+    background-color: #18376a;
+    opacity: 20%;
+    border-radius: 2rem;
+  }
+  .computer{
+    margin-top: 2rem;
+    text-align: center;
+  }
   ul{
     list-style-type:none;
   }
+ .clear{
+   clear: both;
+ }
   .houseItems{
-    margin-left: 10rem;
+    padding-left: 12rem;
+    padding-bottom: 10rem;
+    padding-top: 5rem;
+    display: inline-block;
   }
   .houseItems .houseItem{
     float: left;
   }
   .box{
-    display:inline;
+    display:inline-block;
+
+    transform:rotate(-20deg);
+
   }
   .boxItem img{
-    width: 4rem;
-    height: 4rem;
-    /*margin-right: 0.2rem;
+    width: 5rem;
+    height: 5rem;
+/*    margin-right: 0.2rem;
     margin-left: 5rem;*/
 
   }
@@ -303,7 +335,8 @@
  }
 
   .boxItem{
-    margin-right: 5rem;
+    margin-right: 2rem;
+   /* margin-bottom: -3rem;*/
   }
  @keyframes living {
    0%{
@@ -319,23 +352,36 @@
      opacity: 1;
    }
  }
-   .marginLeft{
-    margin-left: -5rem;
-  }
- /* .boxItem2 {
-    margin-left: 0rem;
-    margin-top: -3rem;
+  /* .marginLeft{
+    margin-left: -3rem;
+  }*/
+  .boxItem2 {
+    margin-left: -5.4rem;
+    margin-top: -4.1rem;
   }
  .boxItem3 {
-   margin-left: -5rem;
-   margin-top: -3rem;
+   margin-left: -11rem;
+   margin-top: -4rem;
  }
  .boxItem4 {
-   margin-left: -10rem;
-   margin-top: -3rem;
+   margin-left: -16.8rem;
+   margin-top: -4rem;
  }
  .boxItem5 {
-   margin-left: -15rem;
-   margin-top: -3rem;
- }*/
+   margin-left: -22.5rem;
+   margin-top: -4rem;
+ }
+ .computer li{
+   float: left;
+   padding: 2rem;
+ }
+  .computer img{
+    width: 5rem;
+    height: 8rem;
+  }
+  .computerList{
+    margin:0 auto;
+    display:table;
+    text-align: center;
+  }
 </style>

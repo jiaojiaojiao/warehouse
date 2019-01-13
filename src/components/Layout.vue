@@ -75,24 +75,31 @@
   }
   .container{
     flex: 1;
-    /*border: 1px solid #a8ffff;
-    border-radius: 1rem;*/
+    /*border: 1px solid #a8ffff;*/
+    border-radius: 2rem;
     padding: 2rem;
     position: relative;
+    background:repeat url('../assets/centerbg.png');
+    filter:alpha(opacity=40); /*支持 IE 浏览器*/
+    -moz-opacity:0.40; /*支持 FireFox 浏览器*/
+    opacity:0.40; /*支持 Chrome, Opera, Safari 等浏览器*/
   }
   .top-line{
     position: absolute;
-    top: 3.2px;
+    top: 0rem;
     left: 0;
     right: 0;
     background: no-repeat url("../assets/upline.png");
     background-size: 100%;
     width:100%;
     height: 6.5rem;
+    filter:alpha(opacity=100); /*支持 IE 浏览器*/
+    -moz-opacity:1; /*支持 FireFox 浏览器*/
+    opacity:1; /*支持 Chrome, Opera, Safari 等浏览器*/
   }
   .bottom-line{
     position: absolute;
-    bottom: 0px;
+    bottom: -1rem;
     left: 0;
     right: 0;
     background: no-repeat url("../assets/bottemline.png");
