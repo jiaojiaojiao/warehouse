@@ -305,6 +305,10 @@
     transform:rotate(15deg);
     z-index: 1;
   }
+  .houseContent{
+
+    margin-top: 3rem;
+  }
   .computer{
     /*margin-top: 2rem;*/
     text-align: center;
@@ -326,14 +330,12 @@
   }
   .box{
     display:inline-block;
-
     transform:rotate(-20deg);
-
   }
   .boxItem img{
     width: 5rem;
     height: 5rem;
-/*    margin-right: 0.2rem;
+/*  margin-right: 0.2rem;
     margin-left: 5rem;*/
 
   }

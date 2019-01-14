@@ -51,7 +51,7 @@ export default {
 .menuContent{
   text-align: center;
   display: inline-block;
-  margin: 4rem 0;
+  margin: 3rem 0;
 }
   .clear{
     clear: both;
@@ -61,8 +61,8 @@ export default {
     margin-right: 4rem;
   }
   .menuItem img{
-    width: 4rem;
-    height: 4rem;
+    width: 5rem;
+    height: 5rem;
   }
   .menuItem span{
     display: inline-block;
@@ -79,7 +79,7 @@ export default {
     word-break: break-all;
   }
   .menuItem span p{
-    padding: 0.5rem;
+    padding: 0.7rem;
     margin: 0px;
     font-weight: 600;
   }
