@@ -80,12 +80,12 @@
     padding: 2rem;
     position: relative;
     overflow-y: auto;
-    background-color: rgba(0, 51, 95, .5);
-    /*background:repeat url('../assets/centerbg.png');
-    filter:alpha(opacity=40);
+    border-radius: 1.5rem;
+   /* background-color: rgba(0, 51, 95, .5);*/
+    background:repeat url('../assets/centerbg.png');
+    /*filter:alpha(opacity=40);
     -moz-opacity:0.40;
     opacity:0.40;
-    border-radius: 1rem;
     padding: 1rem;*/
   }
   .top-line{
@@ -100,7 +100,7 @@
   }
   .bottom-line{
     position: absolute;
-    bottom: 0px;
+    bottom: -1px;
     left: 0;
     right: 0;
     background: no-repeat url("../assets/bottemline.png") bottom;
