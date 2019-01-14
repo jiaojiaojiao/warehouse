@@ -4,12 +4,12 @@
     <div class="menuTable">
       <div class="menuContent">
         <ul class="menuItems">
-          <li v-for="item in items" class="menuItem" >
+          <li v-for="(item, index) in Object.keys(titleList)" class="menuItem" :key="index" >
             <a href="javascript:void(0);">
-            <span class="menuLeft"><img src="../assets/output.png"></img></span>
+            <span class="menuLeft"><img src="../assets/output.png" /></span>
             <span class="menuRight">
-              <p>{{item}}</p>
-              <p >INPUT</p>
+              <p>{{titleList[item]}}</p>
+              <p >{{item}}</p>
             </span>
             </a>
           </li>
@@ -22,6 +22,7 @@
 <script>
 export default {
   name: 'MaterialItem',
+  props: ['titleList'],
   data () {
     return {
        items: ['入库','出库','仓库']
