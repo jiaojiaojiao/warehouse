@@ -79,7 +79,7 @@
     border-radius: 1rem;*/
     padding: 2rem;
     position: relative;
-    overflow-y: scroll;
+    overflow-y: auto;
     background-color: rgba(0, 51, 95, .5);
     /*background:repeat url('../assets/centerbg.png');
     filter:alpha(opacity=40);
