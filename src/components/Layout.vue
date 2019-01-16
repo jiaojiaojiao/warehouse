@@ -19,9 +19,7 @@
           <div class="top-line"></div>
           <div class="bottom-line"></div>
         </div>
-        <!-- <div class="bottom">
-          <slot name="bottom-bar"></slot>
-        </div> -->
+        <slot name="bottom-bar"></slot>
         <!--<div class="dialog">
           <slot name="dialog-bar"></slot>
         </div>-->
@@ -79,7 +77,7 @@
     border-radius: 1rem;*/
     padding: 2rem;
     position: relative;
-    overflow-y: auto;
+    overflow: hidden;
     border-radius: 1.5rem;
    /* background-color: rgba(0, 51, 95, .5);*/
     background:repeat url('../assets/centerbg.png');
@@ -107,15 +105,5 @@
     background-size: 100%;
     width:100%;
     height: 6.5rem;
-  }
-  .bottom{
-    margin-top: 1.5rem;
-    padding: 1rem;
-    height: 10rem;
-    border: 2px solid #a8ffff;
-    border-radius: 1rem;
-    background-color: #041f4f;
-    box-sizing: border-box;
-    overflow-y: auto;
   }
 </style>

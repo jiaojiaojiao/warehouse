@@ -18,7 +18,6 @@
         </div>
       </div>
     </div>
-    <company-item slot="bottom-bar"></company-item>
     <title-left slot="left-menu"></title-left>
     <title-right slot="right-menu"></title-right>
   </layout>
@@ -29,6 +28,9 @@ import materialItem from "./components/MaterialItem.vue";
 import companyItem from "./components/CompanyItem.vue";
 import titleLeft from './components/TitleLeft.vue';
 import titleRight from './components/TitleRight.vue';
+
+import axios from './utils/axios'
+
 const pointList = [[1005,487], [-200,426], [-1092,-310], [-285,-860], [880,-547]]
 const headerTitle={monitor: '在途监控', management: '任务配送管理'}
 // let pointList = [
@@ -57,7 +59,6 @@ export default {
   },
   computed: {
     calPointList: function(){
-      console.log(this.imgprop)
       return pointList.map(item => {
         const { imgprop } = this
         return [item[0]/imgprop, item[1]/imgprop]
@@ -68,16 +69,10 @@ export default {
     const _this = this
     _this.changeWidth()
     window.addEventListener("resize", _this.changeWidth.bind(_this))
-    _this.activePoint = {
-      1: {
-        licenseplate: '渝A K8888',
-        active: true
-      },
-      4:{
-        licenseplate: '渝B K9999',
-        active: true
-      }
-    }
+    axios({
+      url: '/API/VehicleMonitor/MonitorQuery.ashx',
+      methods: 'post'
+    })
     _this.activePoint = [
     {
         "trajectoryid": 1,
