@@ -1,7 +1,7 @@
 <template>
   <layout>
     <menu-item slot="header" :title-list="headerTitle"></menu-item>
-    <material-item slot="left-bar"></material-item>
+    <material-item slot="left-bar" :materialData="activePoint"></material-item>
     <div slot="container" class="map" ref='mapWrap'>
       <img src="./assets/map.jpg" alt="" :style="`width: ${imgWidth}px; height: ${imgHeight}px`">
       <div class="anchor">
