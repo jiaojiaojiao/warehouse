@@ -2,7 +2,9 @@
   <layout>
     <menu-item slot="header" :title-list="headerTitle"></menu-item>
     <storage-item slot="left-bar"></storage-item>
-    <company-item slot="bottom-bar"></company-item>
+    <div class="bottom" slot="bottom-bar">
+      <company-item></company-item>
+    </div>
     <house-item slot="container"></house-item>
     <dialog-bar slot="dialog-bar"></dialog-bar>
     <title-left slot="left-menu"></title-left>
@@ -36,3 +38,15 @@
     }
   }
 </script>
+<style scoped>
+  .bottom{
+    margin-top: 1.5rem;
+    padding: 1rem;
+    height: 10rem;
+    border: 2px solid #a8ffff;
+    border-radius: 1rem;
+    background-color: #041f4f;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+</style>

@@ -2,21 +2,21 @@
 <template>
   <div class="material">
    <ul>
-      <li v-for="item in items" class="materialItem">
+      <li v-for="(item,key) in materialData" class="materialItem" :key="key">
         <div class="materialTitle">
-          {{item.title}}
+          {{item.licenseplate}}
           <div class="triangleBorder titleLeft">
-            <!-- <span></span>-->
           </div>
         </div>
-        <ul class="materialNames">
-            <li v-for="name in item.name" class="materialName">
-              物料名称：{{name}}
-            </li>
-            <div class="triangleBorder nameLeft">
-            <!-- <span></span>-->
+        <div class="materialNames">
+            <div>
+              <div v-for="name in Object.keys(materialName)" class="materialName" :key="name">
+                {{materialName[name]}}：{{item[name]}}
+              </div>
             </div>
-        </ul>
+            <div class="triangleBorder nameLeft">
+            </div>
+        </div>
 
         <div class="cycleBorder">
           <!--<img src="assets/line.png" alt="" height="100px" width="100px">-->
@@ -28,20 +28,16 @@
   </div>
 </template>
 <script>
+const materialName = {
+  carname: '车辆名称',
+  backtime: '回传时间'
+}
 export default {
   name: 'MaterialItem',
+  props: ['materialData'],
   data () {
     return {
-       items: [
-                      {title:'渝A K7777',
-                       name:['111','222','333','444']
-                      },
-                      {title:'渝A K8888',
-                             name:['111','222','333','444']
-                      },
-                     {title:'渝A K9999',
-                            name:['111','222','333','444']
-                     }]
+      materialName
     }
   }
 }
@@ -89,6 +85,9 @@ export default {
     font-size: 1rem;
     border-bottom: 0.2rem #035e72 double;
     padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+  }
+  .materialName:last-child {
+    border-bottom: 0;
   }
   /*分栏线*/
   .cycleBorder{

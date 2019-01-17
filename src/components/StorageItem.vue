@@ -105,4 +105,7 @@ export default {
     background-size:100% 100%;
     width: 100%;
   }
+  .storageItem:last-child .cycleBorder{
+    display: none;
+  }
 </style>
