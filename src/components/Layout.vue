@@ -19,6 +19,9 @@
           <div class="top-line"></div>
           <div class="bottom-line"></div>
         </div>
+         <!--<div class="bottom">
+          <slot name="bottom-bar"></slot>
+        </div>-->
         <slot name="bottom-bar"></slot>
         <!--<div class="dialog">
           <slot name="dialog-bar"></slot>
