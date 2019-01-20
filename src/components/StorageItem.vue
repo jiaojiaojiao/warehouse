@@ -2,19 +2,18 @@
 <template>
   <div class="storage">
    <ul class="storageItems">
-        <li v-for="item in items" class="storageItem">
+        <li v-for="item in MaterialList" class="storageItem">
           <div class="storageItemMsg">
             <div  class="itemImage">
               <div class="itemImageTable">
-
-                <img src="../assets/box1.png" alt="" width="80%" height="80%">
+                <img src="../assets/box1.png" alt="" width="90%" height="90%">
               </div>
             </div>
             <ul class="itemMsg">
               <li>
-                <p>名称:{{item.name}}</p>
-                <p>种类:{{item.category}}</p>
-                <p>数量:{{item.number}}</p>
+                <p>名称:{{item.materialname}}</p>
+                <p>种类:{{item.materialtypename}}</p>
+                <p>位置:{{item.detailno}}号仓库{{item.detailrow}}行{{item.detailcolumn}}列</p>
               </li>
             </ul>
           </div>
@@ -28,6 +27,7 @@
 <script>
 export default {
   name: 'StorageItem',
+  props:['MaterialList'],
   data () {
     return {
        items:[
@@ -92,7 +92,7 @@ export default {
     color: #7ae1fa;
     font-size: 1rem;
     border: 1px #0f7ac5 solid;
-    padding: 0.25rem 0.5rem;
+    padding: 0.45rem 0.5rem;
     text-align: left;
   }
 

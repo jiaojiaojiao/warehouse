@@ -3,26 +3,24 @@
   <div class="house ">
     <div class="houseContent">
     <ul class="houseItems clear">
-      <li v-for="item in items"  class="houseItem" :class="item.style">
+      <li v-for="item  in list"  class="houseItem" :class="item.style">
           <ul class="box">
-            <li class=" boxItem" v-for="c in item.column" :class="c.style" >
-              <a  @click="openMask()" href="javascript:void(0);">
+            <li class="boxItem" v-for="c in item.column" :class="c.style" >
+                  <!--<a  href="javascript:void(0);" v-for="material in list">
+                    <template v-if="material.detailno==item.line && material.detailrow ==c.number">
+                      <img src="../assets/boxActive.png" alt="">
+                    </template>
+                    <template v-else>
+                      <img src="../assets/box.png" alt="">
+                    </template>
+                </a>-->
+                <a  href="javascript:void(0);"  v-if="c.isactive">
+                <img src="../assets/boxActive.png" alt="">
+              </a>
+              <a  href="javascript:void(0);"  v-else>
                 <img src="../assets/box.png" alt="">
               </a>
             </li>
-
-           <!-- <li class="boxItem2 boxItem">
-              <a href=""><img src="../assets/box.png" alt=""></a>
-            </li>
-            <li class="boxItem3 boxItem">
-              <a href=""><img src="../assets/box.png" alt=""></a>
-            </li>
-            <li class="boxItem4 boxItem">
-              <a href=""><img src="../assets/box.png" alt=""></a>
-            </li>
-            <li class="boxItem5 boxItem">
-              <a href=""><img src="../assets/box.png" alt=""></a>
-            </li>-->
           </ul>
       </li>
       <div class="clear"></div>
@@ -55,33 +53,44 @@
       'dialog-bar': dialogBar,
     },
     name: 'House',
+    props:['materialList'],
     data () {
       return {
         sendVal: false,
-        items : [
+        houseList : [
           {
             column:
               [
                 {
                   number:1,
-                  style:''
+                  style:'',
+                  isactive:false
                 }
                 ,
                 {
                   number:2,
-                  style:'boxItem2'
+                  style:'boxItem2',
+                  isactive:false
                 },
                 {
                   number:3,
-                  style:'boxItem3'
+                  style:'boxItem3',
+                  isactive:false
                 },
                 {
                   number:4,
-                  style:'boxItem4'
+                  style:'boxItem4',
+                  isactive:false
                 },
                 {
                   number:5,
-                  style:'boxItem5'
+                  style:'boxItem5',
+                  isactive:false
+                },
+                {
+                  number:6,
+                  style:'boxItem6',
+                  isactive:false
                 }
             ],
             line:1
@@ -92,23 +101,34 @@
               [
                 {
                   number:1,
-                  style:''
-                },
+                  style:'',
+                  isactive:false
+                }
+                ,
                 {
                   number:2,
-                  style:'boxItem2'
+                  style:'boxItem2',
+                  isactive:false
                 },
                 {
                   number:3,
-                  style:'boxItem3'
+                  style:'boxItem3',
+                  isactive:false
                 },
                 {
                   number:4,
-                  style:'boxItem4'
+                  style:'boxItem4',
+                  isactive:false
                 },
                 {
                   number:5,
-                  style:'boxItem5'
+                  style:'boxItem5',
+                  isactive:false
+                },
+                {
+                  number:6,
+                  style:'boxItem6',
+                  isactive:false
                 }
               ],
             line:2
@@ -118,50 +138,71 @@
               [
                 {
                   number:1,
-                  style:''
-                },
+                  style:'',
+                  isactive:false
+                }
+                ,
                 {
                   number:2,
-                  style:'boxItem2'
+                  style:'boxItem2',
+                  isactive:false
                 },
                 {
                   number:3,
-                  style:'boxItem3'
+                  style:'boxItem3',
+                  isactive:false
                 },
                 {
                   number:4,
-                  style:'boxItem4'
+                  style:'boxItem4',
+                  isactive:false
                 },
                 {
                   number:5,
-                  style:'boxItem5'
+                  style:'boxItem5',
+                  isactive:false
+                },
+                {
+                  number:6,
+                  style:'boxItem6',
+                  isactive:false
                 }
               ],
-            line:3,
-            style:'marginLeft'
+            line:3
           },
           {
             column:
               [
                 {
                   number:1,
-                  style:''
-                },
+                  style:'',
+                  isactive:false
+                }
+                ,
                 {
                   number:2,
-                  style:'boxItem2'
+                  style:'boxItem2',
+                  isactive:false
                 },
                 {
                   number:3,
-                  style:'boxItem3'
+                  style:'boxItem3',
+                  isactive:false
                 },
                 {
                   number:4,
-                  style:'boxItem4'
+                  style:'boxItem4',
+                  isactive:false
                 },
                 {
                   number:5,
-                  style:'boxItem5'
+                  style:'boxItem5',
+                  isactive:false
+                },
+                {
+                  number:6,
+                  style:'boxItem6',
+                  isactive:false
                 }
               ],
             line:4
@@ -171,122 +212,60 @@
               [
                 {
                   number:1,
-                  style:''
-                },
+                  style:'',
+                  isactive:false
+                }
+                ,
                 {
                   number:2,
-                  style:'boxItem2'
+                  style:'boxItem2',
+                  isactive:false
                 },
                 {
                   number:3,
-                  style:'boxItem3'
+                  style:'boxItem3',
+                  isactive:false
                 },
                 {
                   number:4,
-                  style:'boxItem4'
+                  style:'boxItem4',
+                  isactive:false
                 },
                 {
                   number:5,
-                  style:'boxItem5'
+                  style:'boxItem5',
+                  isactive:false
+                },
+                {
+                  number:6,
+                  style:'boxItem6',
+                  isactive:false
                 }
               ],
             line:5,
             style:'marginLeft'
-          },
-          {
-            column:
-              [
-                {
-                  number:1,
-                  style:''
-                },
-                {
-                  number:2,
-                  style:'boxItem2'
-                },
-                {
-                  number:3,
-                  style:'boxItem3'
-                },
-                {
-                  number:4,
-                  style:'boxItem4'
-                },
-                {
-                  number:5,
-                  style:'boxItem5'
-                }
-              ],
-            line:6
-          },
-          {
-            column:
-              [
-                {
-                  number:1,
-                  style:''
-                },
-                {
-                  number:2,
-                  style:'boxItem2'
-                },
-                {
-                  number:3,
-                  style:'boxItem3'
-                },
-                {
-                  number:4,
-                  style:'boxItem4'
-                },
-                {
-                  number:5,
-                  style:'boxItem5'
-                }
-              ],
-            line:7,
-            style:'marginLeft'
-          },
-          {
-            column:
-              [
-                {
-                  number:1,
-                  style:''
-                },
-                {
-                  number:2,
-                  style:'boxItem2'
-                },
-                {
-                  number:3,
-                  style:'boxItem3'
-                },
-                {
-                  number:4,
-                  style:'boxItem4'
-                },
-                {
-                  number:5,
-                  style:'boxItem5'
-                }
-              ],
-            line:8
           }
-        ]
+        ],
+        matailIndex:0
       }
     } ,
     methods:{
-      openMask(index){
-        this.sendVal = true;
-      },
-      clickCancel(){
-        console.log('点击了取消');
-      },
-      clickDanger(){
-        console.log('这里是danger回调')
-      },
-      clickConfirm(){
-        console.log('点击了confirm');
+    },
+    computed :{
+      list(){
+        var houses=this.houseList
+        var materias=this.materialList
+        houses.map(house => {
+           house.column.map(column => {
+             materias.map(materal=>
+             {
+               if (house.line == materal.detailno && materal.detailrow == column.number) {
+                column.isactive=true
+               }
+               })
+             })
+        })
+        return this.houseList
       }
     }
   }
@@ -307,7 +286,7 @@
     z-index: 1;
   }
   .houseContent{
-    margin: 1.5rem 1rem 0rem;
+    margin: 3.5rem 1rem 0rem;
   }
   .computer{
     /*margin-top: 2rem;*/
@@ -320,21 +299,24 @@
    clear: both;
  }
   .houseItems{
-    padding-left: 8rem;
-    padding-bottom: 5rem;
-    padding-top: 1rem;
+    padding-left: 20rem;
+    padding-bottom: 10rem;
+    padding-top: 0.5rem;
     display: inline-block;
   }
   .houseItems .houseItem{
     float: left;
+  }
+  .houseItem{
+    margin-right: 2rem;
   }
   .box{
     display:inline-block;
     transform:rotate(-20deg);
   }
   .boxItem img{
-    width: 5rem;
-    height: 5rem;
+    width: 6rem;
+    height: 6rem;
 /*  margin-right: 0.2rem;
     margin-left: 5rem;*/
 
@@ -351,21 +333,25 @@
   }
 
   .boxItem2 {
-    margin-left: -5.4rem;
-    margin-top: -4.1rem;
+    margin-left: -7rem;
+    margin-top: -4.6rem;
   }
  .boxItem3 {
-   margin-left: -11rem;
-   margin-top: -4rem;
+   margin-left: -14rem;
+   margin-top: -4.6rem;
  }
  .boxItem4 {
-   margin-left: -16.8rem;
-   margin-top: -4rem;
+   margin-left: -21rem;
+   margin-top: -4.6rem;
  }
  .boxItem5 {
-   margin-left: -22.5rem;
-   margin-top: -4rem;
+   margin-left: -28rem;
+   margin-top: -4.6rem;
  }
+  .boxItem6 {
+    margin-left: -35rem;
+    margin-top: -4.6rem;
+  }
  .computer li{
    float: left;
    padding: 0.4rem 1rem;

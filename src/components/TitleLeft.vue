@@ -2,13 +2,14 @@
 <template>
   <div class="TitleLeft">
   <div class="title">
-    <span>{{title}}</span>: <span>{{name}}</span>
+    <span>运送单位</span>: <span>{{receiveunit}}</span>
   </div>
   </div>
 </template>
 <script>
 export default {
   name: 'TitleLeft',
+  props:['receiveunit'],
   data () {
     return {
        title: '运送单位',
