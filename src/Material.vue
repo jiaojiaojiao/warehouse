@@ -40,7 +40,8 @@ export default {
       imgHeight: 0,
       imgprop: 1,
       activePoint: [],
-      headerTitle
+      headerTitle,
+      queryInterval: null
     };
   },
   components: {
@@ -63,7 +64,7 @@ export default {
     _this.changeWidth()
     window.addEventListener("resize", _this.changeWidth.bind(_this))
     _this.querydata()
-    window.setInterval(_this.querydata, 10000)
+    _this.queryInterval = window.setInterval(_this.querydata, 2000)
     // _this.activePoint = [
     // {
     //     "trajectoryid": 1,
@@ -111,7 +112,7 @@ export default {
       return `transform: translateX(${coordinate[0]}px) translateY(${coordinate[1]}px)`
     },
     isPointActive(idx){
-      return this.activePoint.find(item => item.trajectoryid === idx)
+      return this.activePoint.find(item => item.readerid.includes(idx+1))
     },
     querydata(){
       const _this = this
@@ -127,6 +128,9 @@ export default {
         _this.activePoint = res.Entity
       })
     }
+  },
+  destroyed() {
+    clearInterval(this.queryInterval)
   }
 };
 </script>
