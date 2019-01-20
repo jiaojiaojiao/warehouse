@@ -15,7 +15,7 @@
                     </template>
                 </a>-->
                 <a  href="javascript:void(0);"  v-if="c.isactive">
-                <img src="../assets/boxActive.png" alt="">
+                <img src="../assets/boxactive.gif" alt="">
               </a>
               <a  href="javascript:void(0);"  v-else>
                 <img src="../assets/box.png" alt="">

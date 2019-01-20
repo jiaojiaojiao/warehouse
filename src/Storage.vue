@@ -47,7 +47,7 @@
     mounted() {
       const _this = this
       _this.querydata()
-      _this.queryInterval = window.setInterval(_this.querydata, 2000)
+      _this.queryInterval = window.setInterval(_this.querydata, 10000)
       /*_this.storageDate = {
         "Entity": [
           {
@@ -161,18 +161,130 @@
         }).then(res => {
           console.log('aaa')
           console.log(res)
-          /*this.storageDate=res
-          this.showMaterlList(res)*/
+          res = {
+           "Entity": [
+           {
+           "taskid": "25",
+           "outwasecode": "100002",
+           "receiveunit": "4",
+           "unitaddress": "4",
+           "contactman": "4",
+           "contactphone": "15310671012",
+           "carlicense": "渝AK1234",
+           "MaterialList": [
+           {
+           "tmaterialid": "26",
+           "materialname": "野战器材箱",
+           "materialtypename": "办公物资",
+           "materialcount": "5",
+           "materialmode": "规格1*0.6*0.5",
+           "boxid": "6",
+           "boxname": "3号容器",
+           "boxrfid": "373737323536633430383266",
+           "shelfid": "11",
+           "shelfname": "3号货架",
+           "shelfdetailid": "481",
+           "shelfdetailrfid": "633065353230336237623064",
+           "detailrow": "1",
+           "detailcolumn": "1",
+           "detailno": "1"
+           },
+           {
+           "tmaterialid": "27",
+           "materialname": "野战器材箱11",
+           "materialtypename": "办公物资",
+           "materialcount": "5",
+           "materialmode": "规格1*0.6*0.5",
+           "boxid": "6",
+           "boxname": "3号容器",
+           "boxrfid": "373737323536633430383266",
+           "shelfid": "11",
+           "shelfname": "3号货架",
+           "shelfdetailid": "481",
+           "shelfdetailrfid": "633065353230336237623064",
+           "detailrow": "2",
+           "detailcolumn": "2",
+           "detailno": "1"
+           }
+           ]
+           },
+           {
+           "taskid": "26",
+           "outwasecode": "100003",
+           "receiveunit": "6",
+           "unitaddress": "6",
+           "contactman": "6",
+           "contactphone": "15310671012",
+           "carlicense": "渝AK1234",
+           "MaterialList": [
+           {
+           "tmaterialid": "26",
+           "materialname": "野战器材箱",
+           "materialtypename": "办公物资",
+           "materialmode": "规格1*0.6*0.5",
+           "materialcount": "5",
+           "boxid": "6",
+           "boxname": "3号容器",
+           "boxrfid": "373737323536633430383266",
+           "shelfid": "11",
+           "shelfname": "3号货架",
+           "shelfdetailid": "481",
+           "shelfdetailrfid": "633065353230336237623064",
+           "detailrow": "1",
+           "detailcolumn": "1",
+           "detailno": "1"
+           },
+           {
+           "tmaterialid": "27",
+           "materialname": "打印机",
+           "materialtypename": "办公物资",
+           "materialmode": "佳能",
+           "materialcount": "5",
+           "boxid": "",
+           "boxname": "",
+           "boxrfid": "",
+           "shelfid": "9",
+           "shelfname": "1号货架",
+           "shelfdetailid": "242",
+           "shelfdetailrfid": "000000000000000000000033",
+           "detailrow": "1",
+           "detailcolumn": "1",
+           "detailno": "2"
+           }
+           ]
+           }
+           ],
+           "Extend": null,
+           "IsSucceed": true,
+           "Message": null,
+           "TotalCount": 0,
+           "TotalCurr": 0,
+           "userid": 0,
+           "username": null
+           }
+          this.storageDate=res
+          this.showMaterlList(res,0)
+          const length = res.Entity.length
+          var i = 0
+          const setMaterial = () => {
+            if(i < length){
+              _this.MaterialList=res.Entity[i].MaterialList
+              _this.Receiveunit=res.Entity[i].receiveunit
+              i=i+1
+              console.log("这是第几个"+i)
+              setTimeout(setMaterial, 2000)
+            }
+          }
         })
       },
-      showMaterlList(res){
+      showMaterlList(res,index){
         const _this = this
         if(res.IsSucceed){
           res.Entity.map(item => {
             _this.companyList.push(item.receiveunit)
           })
-          _this.MaterialList=res.Entity[0].MaterialList
-          _this.Receiveunit=res.Entity[0].receiveunit
+          _this.MaterialList=res.Entity[index].MaterialList
+          _this.Receiveunit=res.Entity[index].receiveunit
         }
       }
     },
