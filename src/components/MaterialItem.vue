@@ -30,7 +30,7 @@
 <script>
 const materialName = {
   carname: '车辆名称',
-  backtime: '回传时间'
+  backtime: '到达时间'
 }
 export default {
   name: 'MaterialItem',
