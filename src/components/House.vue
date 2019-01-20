@@ -255,6 +255,8 @@
       list(){
         var houses=this.houseList
         var materias=this.materialList
+        console.log('aaaaaaaaa')
+        console.log(materias)
         houses.map(house => {
            house.column.map(column => {
              materias.map(materal=>

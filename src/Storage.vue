@@ -161,7 +161,7 @@
         }).then(res => {
           console.log('aaa')
           console.log(res)
-          res = {
+          /*res = {
            "Entity": [
            {
            "taskid": "25",
@@ -261,20 +261,26 @@
            "TotalCurr": 0,
            "userid": 0,
            "username": null
-           }
+           }*/
           this.storageDate=res
-          this.showMaterlList(res,0)
+          /*this.showMaterlList(res,0)*/
           const length = res.Entity.length
           var i = 0
           const setMaterial = () => {
-            if(i < length){
-              _this.MaterialList=res.Entity[i].MaterialList
-              _this.Receiveunit=res.Entity[i].receiveunit
+            if(i < length-1){
               i=i+1
-              console.log("这是第几个"+i)
-              setTimeout(setMaterial, 2000)
             }
+            else {
+              i=0
+            }
+            console.log("这是第几个"+i)
+            _this.MaterialList=res.Entity[i].MaterialList
+            console.log( _this.MaterialList)
+            _this.Receiveunit=res.Entity[i].receiveunit
+            console.log( _this.Receiveunit)
+            setTimeout(setMaterial, 10000)
           }
+          setMaterial();
         })
       },
       showMaterlList(res,index){
