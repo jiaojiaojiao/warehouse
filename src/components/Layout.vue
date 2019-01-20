@@ -51,11 +51,11 @@
     position: fixed;
   }
   .leftnmenu{
-    top:8rem;
+    top:7rem;
     left: 2rem;
   }
   .rightmenu{
-    top:8rem;
+    top:7rem;
     right: 2rem;
   }
   .left{
@@ -81,7 +81,7 @@
     padding: 2rem;
     position: relative;
     overflow: hidden;
-    border-radius: 1.5rem;
+    border-radius: 1.5rem 1.5rem 2.5rem 2.5rem;
    /* background-color: rgba(0, 51, 95, .5);*/
     background:repeat url('../assets/centerbg.png');
     /*filter:alpha(opacity=40);

@@ -43,10 +43,12 @@
     margin-top: 1.5rem;
     padding: 1rem;
     height: 10rem;
-    border: 2px solid #a8ffff;
-    border-radius: 1rem;
-    background-color: #041f4f;
+    /*border: 2px solid #a8ffff;*/
+   /* border-radius: 1rem;*/
+    /*background-color: #041f4f;*/
     box-sizing: border-box;
     overflow-y: auto;
+    background:no-repeat url("assets/companybg.png");
+    background-size: 100%  97%;
   }
 </style>

@@ -297,17 +297,17 @@
   .house{
     height: 100%;
     overflow-y: scroll;
+    overflow-x: hidden;
   }
   .houseContent,.computerList {
     background-color: #18376a;
     opacity: 20%;
     border-radius: 2rem;
-    transform:rotate(15deg);
+    transform:rotate(7deg);
     z-index: 1;
   }
   .houseContent{
-
-    margin-top: 3rem;
+    margin: 1.5rem 1rem 0rem;
   }
   .computer{
     /*margin-top: 2rem;*/
@@ -320,9 +320,9 @@
    clear: both;
  }
   .houseItems{
-    padding-left: 12rem;
-    padding-bottom: 9rem;
-    padding-top: 5rem;
+    padding-left: 8rem;
+    padding-bottom: 5rem;
+    padding-top: 1rem;
     display: inline-block;
   }
   .houseItems .houseItem{
@@ -368,7 +368,7 @@
  }
  .computer li{
    float: left;
-   padding: 2rem;
+   padding: 0.4rem 1rem;
  }
   .computer img{
     width: 5rem;
@@ -378,5 +378,8 @@
     margin:0 auto;
     display:table;
     text-align: center;
+  }
+  .lineCom img{
+    height: 2rem;
   }
 </style>
