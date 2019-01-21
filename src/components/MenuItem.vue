@@ -5,13 +5,13 @@
       <div class="menuContent">
         <ul class="menuItems">
           <li v-for="(item, index) in Object.keys(titleList)" class="menuItem" :key="index" >
-            <a href="javascript:void(0);">
+            <!-- <a href="javascript:void(0);"> -->
             <span class="menuLeft"><img src="../assets/output.png" /></span>
             <span class="menuRight">
               <p>{{titleList[item]}}</p>
               <p >{{item}}</p>
             </span>
-            </a>
+            <!-- </a> -->
           </li>
         </ul>
         <div class="clear"></div>

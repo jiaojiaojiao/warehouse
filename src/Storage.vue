@@ -47,7 +47,7 @@
     mounted() {
       const _this = this
       _this.querydata()
-      _this.queryInterval = window.setInterval(_this.querydata, 2000)
+      _this.queryInterval = window.setInterval(_this.querydata, 10000)
       /*_this.storageDate = {
         "Entity": [
           {
@@ -159,10 +159,8 @@
           url: 'http://116.62.30.175:8004/API/VehicleMonitor/OutWareH5Query.ashx',
           method: 'post'
         }).then(res => {
-          console.log('aaa')
-          console.log(res)
-          /*this.storageDate=res
-          this.showMaterlList(res)*/
+          this.storageDate=res
+          this.showMaterlList(res)
         })
       },
       showMaterlList(res){
@@ -171,8 +169,20 @@
           res.Entity.map(item => {
             _this.companyList.push(item.receiveunit)
           })
-          _this.MaterialList=res.Entity[0].MaterialList
-          _this.Receiveunit=res.Entity[0].receiveunit
+          // _this.MaterialList=res.Entity[0].MaterialList
+          // _this.Receiveunit=res.Entity[0].receiveunit
+
+          const length = res.Entity.length
+          let i = 0
+          const setMaterial = () => {
+            if(i < length){
+              _this.MaterialList=res.Entity[i].MaterialList
+              _this.Receiveunit=res.Entity[0].receiveunit
+              i++
+              setTimeout(setMaterial, 2000)
+            }
+          }
+          setMaterial()
         }
       }
     },
