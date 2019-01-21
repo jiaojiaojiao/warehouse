@@ -14,7 +14,8 @@
                       <img src="../assets/box.png" alt="">
                     </template>
                 </a>-->
-                <a  href="javascript:void(0);"  v-if="c.isactive">
+                <a  href="javascript:void(0);"  v-if="c.isactive" v-tooltip.notrigger="{ content: c.number+'列', visible: c.isactive,
+                  placement: 'top' ,offset: -30 }" >
                 <img src="../assets/boxactive.gif" alt="">
               </a>
               <a  href="javascript:void(0);"  v-else>
@@ -257,6 +258,7 @@
         var materias=this.materialList
         /*console.log('aaaaaaaaa')
         console.log(materias)*/
+        var time=10
         houses.map(house => {
            house.column.map(column => {
              column.isactive=false
@@ -264,8 +266,15 @@
              {
                if (house.line == materal.detailno && materal.detailrow == column.number) {
                  console.log(house.line+'列'+column.number+'行')
-                 column.isactive=true
-                 console.log(column)
+                 setTimeout(function () {
+                   column.isactive=true
+                   console.log(column)
+                 }, time)
+                 time=time+2000
+                 /*setTimeout(function () {
+                   column.isactive=false
+                   console.log(column)
+                 }, time)*/
                }
                })
              })

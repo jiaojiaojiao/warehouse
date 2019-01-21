@@ -273,12 +273,9 @@
             else {
               i=0
             }
-            console.log("这是第几个"+i)
             _this.MaterialList=res.Entity[i].MaterialList
-            console.log( _this.MaterialList)
             _this.Receiveunit=res.Entity[i].receiveunit
-            console.log( _this.Receiveunit)
-            setTimeout(setMaterial, 20000)
+            setTimeout(setMaterial, 200000)
           }
           setMaterial();
         })

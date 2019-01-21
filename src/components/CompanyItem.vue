@@ -4,7 +4,7 @@
    <ul class="companyItems">
         <li v-for="item in companyList" >
             <v-if receiveunit=item>
-              <a href="" class="companyItem active" v-bind:title=item>
+              <a href="" class="companyItem active" v-bind:title=item >
                 {{item}}
               </a>
             </v-if>
@@ -25,6 +25,20 @@ export default {
   data () {
     return {
        items: ['金瓜子科技发展（北京）有限公司','京东数字科技控股有限公司','上海基分文化传播有限公司','北京锤子数码科技有限公司','北京故宫文化传播有限公司','京千橡网景科技发展有限公司','重庆大学','重庆理工大学']
+    }
+  },
+  computed: {
+    isReceive(){
+      var companys=this.companyList
+      var time=10
+      var num=0
+      companys.map(company => {
+        setTimeout(function () {
+          num++
+        }, time)
+        time=time+2000
+      })
+      return num
     }
   }
 }
