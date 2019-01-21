@@ -10,14 +10,14 @@
               </div>
             </div>
             <ul class="itemMsg">
-              <li class="isActive" v-if="isNum==index">
+             <!-- <li class="isActive" v-if="num==index" v-bind:name="isNum">
                 <p>名称:{{item.materialname}}</p>
                 <p>种类:{{item.materialtypename}}</p>
                 <p>型号:{{item.materialmode}}</p>
                 <p>数量:{{item.materialcount}}</p>
                 <p>位置:{{item.shelfname}}{{item.detailrow}}层{{item.detailcolumn}}列{{item.detailno}}号</p>
-              </li>
-              <li v-else=""  >
+              </li>-->
+              <li  >
                 <p>名称:{{item.materialname}}</p>
                 <p>种类:{{item.materialtypename}}</p>
                 <p>型号:{{item.materialmode}}</p>
@@ -53,25 +53,24 @@ export default {
            category:'蔬菜',
            number:'111'
          }
-       ]
+       ],
+       num:0
     }
   },
+  methods:{
+  },
   computed: {
-    isNum(){
+   /* isNum(){
       var materials=this.MaterialList
-      var time=10
-      var num=0
-      console.log('bbbbbb')
+      var time=1000
       for(var i in materials){
         setTimeout(function () {
-          num=i
-          console.log('cccccccc')
-          console.log(num)
+          this.num=i
         }, time)
-        time=time+3000
+
       }
-      return num
-    }
+      return this.num
+    }*/
   }
 }
 </script>
@@ -106,16 +105,16 @@ export default {
     width:30%;
     float:left;
   }
-  .itemMsg{
-    padding-left: 0.5rem;
+  .itemMsg li{
+    margin-left: 0.5rem;
     width:66%;
     float:left;
     height:auto;
     word-break: break-all;
     background-color: #08249a ;
   }
-  .itemMsg .isActive{
-    background-color: #2e2e2e;
+  .itemMsg .isActive p{
+    color: rgb(205, 78, 224);
   }
   .itemMsg p{
     color: #7ae1fa;

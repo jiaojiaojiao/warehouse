@@ -275,7 +275,7 @@
             }
             _this.MaterialList=res.Entity[i].MaterialList
             _this.Receiveunit=res.Entity[i].receiveunit
-            setTimeout(setMaterial, 200000)
+            setTimeout(setMaterial, 10000)
           }
           setMaterial();
         })

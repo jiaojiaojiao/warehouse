@@ -14,9 +14,8 @@
                       <img src="../assets/box.png" alt="">
                     </template>
                 </a>-->
-                <a  href="javascript:void(0);"  v-if="c.isactive" v-tooltip.notrigger="{ content: c.number+'列', visible: c.isactive,
-                  placement: 'top' ,offset: -30 }" >
-                <img src="../assets/boxactive.gif" alt="">
+                <a  href="javascript:void(0);"  v-if="c.isactive" v-tooltip.notrigger="{ content: c.shelfname+c.detailrow+'层'+c.detailcolumn+'列'+c.detailno+'号', visible: c.isactive}">
+                  <img src="../assets/boxactive.gif" alt="">
               </a>
               <a  href="javascript:void(0);"  v-else>
                 <img src="../assets/box.png" alt="">
@@ -65,18 +64,30 @@
                 {
                   number:1,
                   style:'',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 }
                 ,
                 {
                   number:2,
                   style:'boxItem2',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 },
                 {
                   number:3,
                   style:'boxItem3',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 },
                 {
                   number:4,
@@ -86,12 +97,20 @@
                 {
                   number:5,
                   style:'boxItem5',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 },
                 {
                   number:6,
                   style:'boxItem6',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 }
             ],
             line:1
@@ -103,18 +122,30 @@
                 {
                   number:1,
                   style:'',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 }
                 ,
                 {
                   number:2,
                   style:'boxItem2',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 },
                 {
                   number:3,
                   style:'boxItem3',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 },
                 {
                   number:4,
@@ -124,12 +155,20 @@
                 {
                   number:5,
                   style:'boxItem5',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 },
                 {
                   number:6,
                   style:'boxItem6',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 }
               ],
             line:2
@@ -140,18 +179,30 @@
                 {
                   number:1,
                   style:'',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 }
                 ,
                 {
                   number:2,
                   style:'boxItem2',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 },
                 {
                   number:3,
                   style:'boxItem3',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 },
                 {
                   number:4,
@@ -161,12 +212,20 @@
                 {
                   number:5,
                   style:'boxItem5',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 },
                 {
                   number:6,
                   style:'boxItem6',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 }
               ],
             line:3
@@ -177,18 +236,30 @@
                 {
                   number:1,
                   style:'',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 }
                 ,
                 {
                   number:2,
                   style:'boxItem2',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 },
                 {
                   number:3,
                   style:'boxItem3',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 },
                 {
                   number:4,
@@ -198,12 +269,20 @@
                 {
                   number:5,
                   style:'boxItem5',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 },
                 {
                   number:6,
                   style:'boxItem6',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 }
               ],
             line:4
@@ -214,18 +293,30 @@
                 {
                   number:1,
                   style:'',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 }
                 ,
                 {
                   number:2,
                   style:'boxItem2',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 },
                 {
                   number:3,
                   style:'boxItem3',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 },
                 {
                   number:4,
@@ -235,12 +326,20 @@
                 {
                   number:5,
                   style:'boxItem5',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 },
                 {
                   number:6,
                   style:'boxItem6',
-                  isactive:false
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
                 }
               ],
             line:5,
@@ -262,22 +361,43 @@
         houses.map(house => {
            house.column.map(column => {
              column.isactive=false
-             materias.map(materal=>
-             {
-               if (house.line == materal.detailno && materal.detailrow == column.number) {
-                 console.log(house.line+'列'+column.number+'行')
+             for(var i in materias) {
+               if (house.line == materias[i].detailno && materias[i].detailrow == column.number) {
                  setTimeout(function () {
                    column.isactive=true
-                   console.log(column)
+                   column.shelfname=materias[i].shelfname
+                   column.detailno=materias[i].detailno
+                   column.detailrow=materias[i].detailrow
+                   column.detailcolumn=materias[i].detailcolumn
+                 }, time)
+                 time=time+1000
+                 if(i<materias.length-1){
+                   setTimeout(function () {
+                     column.isactive=false
+                     console.log(column)
+                   }, time)
+                 }
+               }
+               }
+             })
+             /*materias.map(materal=>
+             {
+               if (house.line == materal.detailno && materal.detailrow == column.number) {
+                 /!*console.log(house.line+'列'+column.number+'行')*!/
+                 setTimeout(function () {
+                   column.isactive=true
+                  /!* console.log(column)*!/
                  }, time)
                  time=time+2000
-                 /*setTimeout(function () {
-                   column.isactive=false
-                   console.log(column)
-                 }, time)*/
+                 if(index<materias.length){
+                   setTimeout(function () {
+                     column.isactive=false
+                     console.log(column)
+                   }, time)
+                 }
                }
                })
-             })
+             })*/
         })
         return this.houseList
       }
