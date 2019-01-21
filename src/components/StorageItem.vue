@@ -6,14 +6,15 @@
           <div class="storageItemMsg">
             <div  class="itemImage">
               <div class="itemImageTable">
-                <img src="../assets/box1.png" alt="" width="90%" height="90%">
+                <img src="../assets/box1.png" alt="" width="100%" height="100%">
               </div>
             </div>
             <ul class="itemMsg">
               <li>
                 <p>名称:{{item.materialname}}</p>
                 <p>种类:{{item.materialtypename}}</p>
-                <p>位置:{{item.detailno}}号仓库{{item.detailrow}}行{{item.detailcolumn}}列</p>
+                <p>型号:{{item.materialmode}}</p>
+                <p>位置:{{item.shelfname}}{{item.detailrow}}层{{item.detailcolumn}}列{{item.detailno}}号</p>
               </li>
             </ul>
           </div>
@@ -95,7 +96,9 @@ export default {
     padding: 0.45rem 0.5rem;
     text-align: left;
   }
-
+.itemImageTable {
+  padding: 0.5rem 0;
+}
   /*分栏线*/
   .cycleBorder
   {

@@ -47,7 +47,7 @@
     mounted() {
       const _this = this
       _this.querydata()
-      _this.queryInterval = window.setInterval(_this.querydata, 10000)
+      _this.queryInterval = window.setInterval(_this.querydata, 200000)
       /*_this.storageDate = {
         "Entity": [
           {
@@ -278,7 +278,7 @@
             console.log( _this.MaterialList)
             _this.Receiveunit=res.Entity[i].receiveunit
             console.log( _this.Receiveunit)
-            setTimeout(setMaterial, 10000)
+            setTimeout(setMaterial, 20000)
           }
           setMaterial();
         })
