@@ -47,11 +47,7 @@
     mounted() {
       const _this = this
       _this.querydata()
-<<<<<<< HEAD
-      _this.queryInterval = window.setInterval(_this.querydata, 10000)
-=======
       _this.queryInterval = window.setInterval(_this.querydata, 200000)
->>>>>>> 61764b3c86ecf5762440b3f8f15f711c22bfa3a6
       /*_this.storageDate = {
         "Entity": [
           {
@@ -163,10 +159,6 @@
           url: 'http://116.62.30.175:8004/API/VehicleMonitor/OutWareH5Query.ashx',
           method: 'post'
         }).then(res => {
-<<<<<<< HEAD
-          this.storageDate=res
-          this.showMaterlList(res)
-=======
           console.log('aaa')
           console.log(res)
           /*res = {
@@ -286,7 +278,6 @@
             setTimeout(setMaterial, 10000)
           }
           setMaterial();
->>>>>>> 61764b3c86ecf5762440b3f8f15f711c22bfa3a6
         })
       },
       showMaterlList(res,index){
@@ -295,25 +286,8 @@
           res.Entity.map(item => {
             _this.companyList.push(item.receiveunit)
           })
-<<<<<<< HEAD
-          // _this.MaterialList=res.Entity[0].MaterialList
-          // _this.Receiveunit=res.Entity[0].receiveunit
-
-          const length = res.Entity.length
-          let i = 0
-          const setMaterial = () => {
-            if(i < length){
-              _this.MaterialList=res.Entity[i].MaterialList
-              _this.Receiveunit=res.Entity[0].receiveunit
-              i++
-              setTimeout(setMaterial, 2000)
-            }
-          }
-          setMaterial()
-=======
           _this.MaterialList=res.Entity[index].MaterialList
           _this.Receiveunit=res.Entity[index].receiveunit
->>>>>>> 61764b3c86ecf5762440b3f8f15f711c22bfa3a6
         }
       }
     },
