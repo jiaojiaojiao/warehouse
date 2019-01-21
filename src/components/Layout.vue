@@ -69,6 +69,9 @@
     background-size: 100% 100%;
     overflow-y: auto;
   }
+  .left::-webkit-scrollbar {
+    display: none;
+  }
   .right{
     flex: 1;
     display: flex;

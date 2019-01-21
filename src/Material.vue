@@ -19,7 +19,7 @@
       </div>
     </div>
     <title-left slot="left-menu"></title-left>
-    <title-right slot="right-menu"></title-right>
+    <title-right slot="right-menu" :linkObj="linkObj"></title-right>
   </layout>
 </template>
 <script>
@@ -41,7 +41,11 @@ export default {
       imgprop: 1,
       activePoint: [],
       headerTitle,
-      queryInterval: null
+      queryInterval: null,
+      linkObj: {
+        link: '#/storage',
+        title: '出库物资一览'
+      }
     };
   },
   components: {

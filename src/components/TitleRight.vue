@@ -1,17 +1,18 @@
 <!--单位信息-->
 <template>
   <div class="TitleRight">
-  <div class="title">
-    <span>{{title}}</span>
-  </div>
+    <a class="title" :href="linkObj ? linkObj.link : ''">
+      <span>{{linkObj ? linkObj.title : title}}</span>
+    </a>
   </div>
 </template>
 <script>
 export default {
   name: 'TitleRight',
+  props: ['linkObj'],
   data () {
     return {
-       title: '出库物资一览'
+       title: '任务配送管理'
     }
   }
 }
@@ -33,6 +34,6 @@ export default {
     background-size:100% 99.9%;
     padding: 1rem 10rem;
     color: #fcfdfd;
-
+    text-decoration: none;
   }
 </style>
