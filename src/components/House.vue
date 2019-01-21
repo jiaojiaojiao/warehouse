@@ -14,8 +14,9 @@
                       <img src="../assets/box.png" alt="">
                     </template>
                 </a>-->
-                <a  href="javascript:void(0);"  v-if="c.isactive">
-                <img src="../assets/boxActive.png" alt="">
+                <a  href="javascript:void(0);"  v-if="c.isactive" v-tooltip.notrigger="{ content: c.number+'列', visible: c.isactive,
+                  placement: 'top' ,offset: -30 }" >
+                <img src="../assets/boxactive.gif" alt="">
               </a>
               <a  href="javascript:void(0);"  v-else>
                 <img src="../assets/box.png" alt="">
@@ -255,12 +256,25 @@
       list(){
         var houses=this.houseList
         var materias=this.materialList
+        /*console.log('aaaaaaaaa')
+        console.log(materias)*/
+        var time=10
         houses.map(house => {
            house.column.map(column => {
+             column.isactive=false
              materias.map(materal=>
              {
                if (house.line == materal.detailno && materal.detailrow == column.number) {
-                column.isactive=true
+                 console.log(house.line+'列'+column.number+'行')
+                 setTimeout(function () {
+                   column.isactive=true
+                   console.log(column)
+                 }, time)
+                 time=time+2000
+                 /*setTimeout(function () {
+                   column.isactive=false
+                   console.log(column)
+                 }, time)*/
                }
                })
              })
@@ -275,8 +289,9 @@
 <style scoped>
   .house{
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: hidden;
     overflow-x: hidden;
+
   }
   .houseContent,.computerList {
     background-color: #18376a;
@@ -315,8 +330,8 @@
     transform:rotate(-20deg);
   }
   .boxItem img{
-    width: 6rem;
-    height: 6rem;
+    width: 7rem;
+    height: 7rem;
 /*  margin-right: 0.2rem;
     margin-left: 5rem;*/
 
@@ -328,29 +343,29 @@
  }
 
   .boxItem{
-    margin-right: 2rem;
+    margin-right: 1rem;
    /* margin-bottom: -3rem;*/
   }
 
   .boxItem2 {
-    margin-left: -7rem;
-    margin-top: -4.6rem;
+    margin-left: -9.5rem;
+    margin-top: -5rem;
   }
  .boxItem3 {
-   margin-left: -14rem;
-   margin-top: -4.6rem;
+   margin-left: -18.5rem;
+   margin-top: -5rem;
  }
  .boxItem4 {
-   margin-left: -21rem;
-   margin-top: -4.6rem;
+   margin-left: -27.5rem;
+   margin-top: -5rem;
  }
  .boxItem5 {
-   margin-left: -28rem;
-   margin-top: -4.6rem;
+   margin-left: -36.5rem;
+   margin-top: -5rem;
  }
   .boxItem6 {
-    margin-left: -35rem;
-    margin-top: -4.6rem;
+    margin-left: -45.5rem;
+    margin-top: -5rem;
   }
  .computer li{
    float: left;

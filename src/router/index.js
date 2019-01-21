@@ -15,11 +15,6 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-   /* {
-      path: '/m',
-      name: 'Ma',
-      component: Ma
-    },*/
     {
       path: '/',
       name: 'Material',
@@ -30,39 +25,5 @@ export default new Router({
       name: 'Storage',
       component: Storage
     }
-    /* {
-      path: '/b',
-      name: 'CompanyItem',
-      component: CompanyItem
-
-    },
-    {
-      path: '/C',
-      name: 'StorageItem',
-      component: StorageItem
-
-    },
-    {
-     path: '/d',
-      name: 'MenuItem',
-      component: MenuItem
-
-    },
-    {
-      path: '/',
-      name: 'TitleRight',
-      component: TitleRight
-
-    },
-    {
-      path: '/l',
-      name: 'TitleLeft',
-      component: TitleLeft
-    },
-    {
-      path: '/h',
-      name: 'House',
-      component: House
-    }*/
   ]
 })
