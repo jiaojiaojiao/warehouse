@@ -18,7 +18,6 @@
         </div>
       </div>
     </div>
-    <title-left slot="left-menu"></title-left>
     <title-right slot="right-menu" :linkObj="linkObj"></title-right>
   </layout>
 </template>
@@ -31,8 +30,11 @@ import titleRight from './components/TitleRight.vue';
 
 import ajax from './utils/ajax'
 
-const pointList = [[1005,487], [-200,426], [-1092,-310], [-285,-860], [880,-547]]
+const pointList = [[579,660], [593,194], [601,-489], [-287,180], [-677,-687]]
 const headerTitle={monitor: '在途监控', management: '任务配送管理'}
+const defaultW = 3000
+const defaultH = 1885
+const defaultProp = defaultW / defaultH
 export default {
   data() {
     return {
@@ -81,18 +83,6 @@ export default {
     //     "backtime": "2019-01-07 15:02:13.190",
     //     "hexreaderid": "00 37",
     //     "hexcarrfid": "2F 43 77 07"
-    // },
-    // {
-    //     "trajectoryid": 2,
-    //     "trajectorycode": "089ad401a68a45d5bd17cd7d7914601d",
-    //     "createtime": "2019-01-07 14:57:14.253",
-    //     "carname": "长安",
-    //     "licenseplate": "渝A123456",
-    //     "readerid": "55",
-    //     "carrfid": "792950535",
-    //     "backtime": "2019-01-07 14:57:14.254",
-    //     "hexreaderid": "00 37",
-    //     "hexcarrfid": "2F 43 77 07"
     // }
 // ]
 
@@ -101,14 +91,14 @@ export default {
     changeWidth() {
       const wrapWidth = this.$refs.mapWrap.clientWidth
       const wrapHeight = this.$refs.mapWrap.clientHeight
-      if (wrapWidth > wrapHeight * 2){
-        this.imgWidth = wrapHeight * 2
+      if (wrapWidth > wrapHeight * defaultProp){
+        this.imgWidth = wrapHeight * defaultProp
         this.imgHeight = wrapHeight
-        this.imgprop = 2176 / wrapHeight
+        this.imgprop = defaultH / wrapHeight
       } else {
         this.imgWidth = wrapWidth
-        this.imgHeight = wrapWidth / 2
-        this.imgprop = 4325 / wrapWidth
+        this.imgHeight = wrapWidth / defaultProp
+        this.imgprop = defaultW / wrapWidth
       }
     },
     calStyle(item){

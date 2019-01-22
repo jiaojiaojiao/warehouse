@@ -11,7 +11,7 @@
         <div class="materialNames">
             <div>
               <div v-for="name in Object.keys(materialName)" class="materialName" :key="name">
-                {{materialName[name]}}：{{item[name]}}
+                {{materialName[name]}}：{{name === 'trajectoryid' ? `${item[name]}号点` : item[name]}}
               </div>
             </div>
             <div class="triangleBorder nameLeft">
@@ -30,7 +30,8 @@
 <script>
 const materialName = {
   carname: '车辆名称',
-  backtime: '到达时间'
+  backtime: '到达时间',
+  trajectoryid: '到达地点'
 }
 export default {
   name: 'MaterialItem',
