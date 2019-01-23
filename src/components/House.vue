@@ -14,7 +14,7 @@
                       <img src="../assets/box.png" alt="">
                     </template>
                 </a>-->
-                <a  href="javascript:void(0);"  v-if="c.isactive" v-tooltip.notrigger="{ content: c.shelfname+c.detailrow+'层'+c.detailcolumn+'列'+c.detailno+'号', visible: c.isactive}">
+                <a  href="javascript:void(0);"  v-if="c.isactive" v-tooltip.notrigger="{ content: c.shelfname+'货架'+c.detailrow+'层'+c.detailcolumn+'列'+c.detailno+'号', visible: c.isactive}">
                   <img src="../assets/boxactive.gif" alt="">
               </a>
               <a  href="javascript:void(0);"  v-else>
@@ -113,7 +113,7 @@
                   detailno:''
                 }
             ],
-            line:1
+            line:'A'
           }
           ,
           {
@@ -171,7 +171,7 @@
                   detailno:''
                 }
               ],
-            line:2
+            line:'B'
           },
           {
             column:
@@ -228,7 +228,103 @@
                   detailno:''
                 }
               ],
-            line:3
+            line:'C'
+          },
+          {
+            column:
+              [
+                {
+                  number:1,
+                  style:'',
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
+                }
+                ,
+                {
+                  number:2,
+                  style:'boxItem2',
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
+                },
+                {
+                  number:3,
+                  style:'boxItem3',
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
+                },
+                {
+                  number:4,
+                  style:'boxItem4',
+                  isactive:false
+                },
+                {
+                  number:5,
+                  style:'boxItem5',
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
+                }
+              ],
+            line:'D'
+          },
+          {
+            column:
+              [
+                {
+                  number:1,
+                  style:'',
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
+                }
+                ,
+                {
+                  number:2,
+                  style:'boxItem2',
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
+                },
+                {
+                  number:3,
+                  style:'boxItem3',
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
+                },
+                {
+                  number:4,
+                  style:'boxItem4',
+                  isactive:false
+                },
+                {
+                  number:5,
+                  style:'boxItem5',
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
+                }
+              ],
+            line:'E'
           },
           {
             column:
@@ -285,7 +381,7 @@
                   detailno:''
                 }
               ],
-            line:4
+            line:'F'
           },
           {
             column:
@@ -342,8 +438,64 @@
                   detailno:''
                 }
               ],
-            line:5,
-            style:'marginLeft'
+            line:'G'
+          },
+          {
+            column:
+              [
+                {
+                  number:1,
+                  style:'',
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
+                }
+                ,
+                {
+                  number:2,
+                  style:'boxItem2',
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
+                },
+                {
+                  number:3,
+                  style:'boxItem3',
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
+                },
+                {
+                  number:4,
+                  style:'boxItem4',
+                  isactive:false
+                },
+                {
+                  number:5,
+                  style:'boxItem5',
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
+                },
+                {
+                  number:6,
+                  style:'boxItem6',
+                  isactive:false,
+                  shelfname:'',
+                  detailrow:'',
+                  detailcolumn:'',
+                  detailno:''
+                }
+              ],
+            line:'H'
           }
         ],
         matailIndex:0
@@ -357,18 +509,18 @@
         var materias=this.materialList
         /*console.log('aaaaaaaaa')
         console.log(materias)*/
-        var time=10
+        var time=0
         houses.map(house => {
            house.column.map(column => {
              column.isactive=false
              for(var i in materias) {
-               if (house.line == materias[i].detailno && materias[i].detailrow == column.number) {
-                 setTimeout(function () {
-                   column.isactive=true
+               if (house.line == materias[i].shelfname && materias[i].detailcolumn == (column.lenght=6?(7-column.number):(6-column.number)) ){
                    column.shelfname=materias[i].shelfname
                    column.detailno=materias[i].detailno
                    column.detailrow=materias[i].detailrow
                    column.detailcolumn=materias[i].detailcolumn
+                 setTimeout(function () {
+                   column.isactive=true
                  }, time)
                  time=time+1000
                  if(i<materias.length-1){
@@ -380,24 +532,6 @@
                }
                }
              })
-             /*materias.map(materal=>
-             {
-               if (house.line == materal.detailno && materal.detailrow == column.number) {
-                 /!*console.log(house.line+'列'+column.number+'行')*!/
-                 setTimeout(function () {
-                   column.isactive=true
-                  /!* console.log(column)*!/
-                 }, time)
-                 time=time+2000
-                 if(index<materias.length){
-                   setTimeout(function () {
-                     column.isactive=false
-                     console.log(column)
-                   }, time)
-                 }
-               }
-               })
-             })*/
         })
         return this.houseList
       }
@@ -417,7 +551,7 @@
     background-color: #18376a;
     opacity: 20%;
     border-radius: 2rem;
-    transform:rotate(7deg);
+    transform:rotate(5deg);
     z-index: 1;
   }
   .houseContent{
@@ -434,7 +568,7 @@
    clear: both;
  }
   .houseItems{
-    padding-left: 20rem;
+    padding-left: 15rem;
     padding-bottom: 10rem;
     padding-top: 0.5rem;
     display: inline-block;
@@ -443,15 +577,15 @@
     float: left;
   }
   .houseItem{
-    margin-right: 2rem;
+    margin-right: 1rem;
   }
   .box{
     display:inline-block;
     transform:rotate(-20deg);
   }
   .boxItem img{
-    width: 7rem;
-    height: 7rem;
+    width: 5rem;
+    height: 8rem;
 /*  margin-right: 0.2rem;
     margin-left: 5rem;*/
 
@@ -468,24 +602,24 @@
   }
 
   .boxItem2 {
-    margin-left: -9.5rem;
-    margin-top: -5rem;
+    margin-left: -6rem;
+    margin-top: -6rem;
   }
  .boxItem3 {
-   margin-left: -18.5rem;
-   margin-top: -5rem;
+   margin-left: -12rem;
+   margin-top: -6rem;
  }
  .boxItem4 {
-   margin-left: -27.5rem;
-   margin-top: -5rem;
+   margin-left: -18rem;
+   margin-top: -6rem;
  }
  .boxItem5 {
-   margin-left: -36.5rem;
-   margin-top: -5rem;
+   margin-left: -24rem;
+   margin-top: -6rem;
  }
   .boxItem6 {
-    margin-left: -45.5rem;
-    margin-top: -5rem;
+    margin-left: -30rem;
+    margin-top: -6rem;
   }
  .computer li{
    float: left;

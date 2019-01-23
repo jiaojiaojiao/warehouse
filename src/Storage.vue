@@ -47,7 +47,7 @@
     mounted() {
       const _this = this
       _this.querydata()
-      _this.queryInterval = window.setInterval(_this.querydata, 200000)
+      _this.queryInterval = window.setInterval(_this.querydata, 20000)
       /*_this.storageDate = {
         "Entity": [
           {
@@ -159,8 +159,8 @@
           url: 'http://116.62.30.175:8004/API/VehicleMonitor/OutWareH5Query.ashx',
           method: 'post'
         }).then(res => {
-          console.log('aaa')
-          console.log(res)
+         /* console.log('aaa')
+          console.log(res)*/
           /*res = {
            "Entity": [
            {
