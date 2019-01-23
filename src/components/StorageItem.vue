@@ -83,9 +83,9 @@ export default {
   .storage{
 
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     box-sizing: border-box;
-    overflow-y:scroll;
+    /* overflow-y:scroll; */
   }
   .storageItems{
    padding:0.5rem;
