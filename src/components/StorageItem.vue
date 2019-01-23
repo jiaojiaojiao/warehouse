@@ -22,7 +22,7 @@
                 <p>种类:{{item.materialtypename}}</p>
                 <p>型号:{{item.materialmode}}</p>
                 <p>数量:{{item.materialcount}}</p>
-                <p>位置:{{item.shelfname}}{{item.detailrow}}层{{item.detailcolumn}}列{{item.detailno}}号</p>
+                <p>位置:{{item.shelfname}}货架{{item.detailrow}}层{{item.detailcolumn}}列{{item.detailno}}号</p>
               </li>
             </ul>
           </div>
