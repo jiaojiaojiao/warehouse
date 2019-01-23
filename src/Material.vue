@@ -70,7 +70,7 @@ export default {
     _this.changeWidth()
     window.addEventListener("resize", _this.changeWidth.bind(_this))
     _this.querydata()
-    _this.queryInterval = window.setInterval(_this.querydata, 2000)
+    _this.queryInterval = window.setInterval(_this.querydata, 5000)
     // _this.activePoint = [
     // {
     //     "trajectoryid": 1,
