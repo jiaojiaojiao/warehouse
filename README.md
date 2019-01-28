@@ -25,3 +25,9 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+
+#baseURI
+```
+"baseURI": "http://116.62.30.175:8004" //测试环境
+"baseURI": "http://192.168.1.3" //生产环境
