@@ -1,7 +1,7 @@
 <template>
   <layout>
     <menu-item slot="header" :title-list="headerTitle"></menu-item>
-    <material-item slot="left-bar" :materialData="activePoint"></material-item>
+    <material-item slot="left-bar" :materialData="allPoint"></material-item>
     <div slot="container" class="map" ref='mapWrap'>
       <img src="./assets/map.jpg" alt="" :style="`width: ${imgWidth}px; height: ${imgHeight}px`">
       <div class="anchor">
@@ -12,7 +12,7 @@
           :style="calStyle(item)"
         >
           <div class="tip" v-show="isPointActive(idx)">
-            {{isPointActive(idx) && isPointActive(idx).licenseplate}}
+            {{isPointActive(idx) && activePoint.licenseplate}}
           </div>
           <div :class="['pulse', isPointActive(idx) ? 'active' : '']"></div>
         </div>
@@ -41,7 +41,8 @@ export default {
       imgWidth: 100,
       imgHeight: 0,
       imgprop: 1,
-      activePoint: [],
+      allPoint: [],
+      activePoint: {},
       headerTitle,
       queryInterval: null,
       linkObj: {
@@ -70,22 +71,6 @@ export default {
     _this.changeWidth()
     window.addEventListener("resize", _this.changeWidth.bind(_this))
     _this.querydata()
-    _this.queryInterval = window.setInterval(_this.querydata, 5000)
-    // _this.activePoint = [
-    // {
-    //     "trajectoryid": 1,
-    //     "trajectorycode": "170a58f39b3948199ab02e2986b0b338",
-    //     "createtime": "2019-01-07 15:02:13.180",
-    //     "carname": "长安",
-    //     "licenseplate": "渝A123456",
-    //     "readerid": "55",
-    //     "carrfid": "792950535",
-    //     "backtime": "2019-01-07 15:02:13.190",
-    //     "hexreaderid": "00 37",
-    //     "hexcarrfid": "2F 43 77 07"
-    // }
-// ]
-
   },
   methods: {
     changeWidth() {
@@ -106,7 +91,7 @@ export default {
       return `transform: translateX(${coordinate[0]}px) translateY(${coordinate[1]}px)`
     },
     isPointActive(idx){
-      return this.activePoint.find(item => item.readerid.includes(idx+1))
+      return this.activePoint.TrajectoryList && this.activePoint.TrajectoryList[0].readerid.includes(idx+1)
     },
     querydata(){
       const _this = this
@@ -119,7 +104,24 @@ export default {
           page: ''
         })
       }).then(res => {
-        _this.activePoint = res.Entity
+          const length = res.Entity.length
+          var i = 0
+          const setMaterial = () => {
+            if(i < length){
+              _this.allPoint = res.Entity
+              _this.activePoint = res.Entity[i]
+              // const trajectoryList = res.Entity[i].TrajectoryList
+              // _this.activePoint=trajectoryList[0]
+              setTimeout(setMaterial, 5000)
+              i++
+            }
+            else {
+              //循环后重新查询
+              _this.querydata();
+            }
+          }
+          setMaterial();
+        // _this.activePoint = res.Entity
       })
     }
   },

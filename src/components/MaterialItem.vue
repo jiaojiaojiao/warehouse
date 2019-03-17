@@ -4,14 +4,14 @@
    <ul>
       <li v-for="(item,key) in materialData" class="materialItem" :key="key">
         <div class="materialTitle">
-          {{item.licenseplate}}
+          {{item.TrajectoryList[0].licenseplate}}
           <div class="triangleBorder titleLeft">
           </div>
         </div>
         <div class="materialNames">
             <div>
               <div v-for="name in Object.keys(materialName)" class="materialName" :key="name">
-                {{materialName[name]}}：{{name === 'trajectoryid' ? `${item[name]}号点` : item[name]}}
+                {{materialName[name]}}：{{getValue(item, name)}}
               </div>
             </div>
             <div class="triangleBorder nameLeft">
@@ -31,7 +31,7 @@
 const materialName = {
   carname: '车辆名称',
   backtime: '到达时间',
-  trajectoryid: '到达地点'
+  readerid: '到达地点'
 }
 export default {
   name: 'MaterialItem',
@@ -39,6 +39,11 @@ export default {
   data () {
     return {
       materialName
+    }
+  },
+  methods: {
+    getValue(item, name){
+      return name === 'trajectoryid' ? `${item.TrajectoryList[0][name]}号点` : (item.TrajectoryList[0][name] || item[name])
     }
   }
 }
