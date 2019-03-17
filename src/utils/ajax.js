@@ -1,14 +1,17 @@
+import config from '../../static/config'
+
 const ajax = params => {
   const { url, method, data } = params
+  const queryUrl = `${config.baseURI}/${url}`
   const type = method.toLowerCase()
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest()
     xhr.timeout = 1000
     if (type === 'get') {
-      xhr.open('GET', url, true)
+      xhr.open('GET', queryUrl, true)
       xhr.send()
     } else if (type === 'post') {
-      xhr.open('POST', url, true)
+      xhr.open('POST', queryUrl, true)
       xhr.send(data)
     }
     xhr.onload = function () {

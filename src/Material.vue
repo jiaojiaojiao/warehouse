@@ -70,7 +70,7 @@ export default {
     _this.changeWidth()
     window.addEventListener("resize", _this.changeWidth.bind(_this))
     _this.querydata()
-    _this.queryInterval = window.setInterval(_this.querydata, 2000)
+    _this.queryInterval = window.setInterval(_this.querydata, 5000)
     // _this.activePoint = [
     // {
     //     "trajectoryid": 1,
@@ -111,7 +111,7 @@ export default {
     querydata(){
       const _this = this
       ajax({
-        url: 'http://116.62.30.175:8004/API/VehicleMonitor/MonitorQuery.ashx',
+        url: 'API/VehicleMonitor/MonitorQuery.ashx',
         method: 'post',
         data: JSON.stringify({
           userid: '',

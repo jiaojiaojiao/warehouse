@@ -156,7 +156,7 @@
       querydata(){
         const _this = this
         ajax({
-          url: 'http://116.62.30.175:8004/API/VehicleMonitor/OutWareH5Query.ashx',
+          url: 'API/VehicleMonitor/OutWareH5Query.ashx',
           method: 'post'
         }).then(res => {
          /* console.log('aaa')

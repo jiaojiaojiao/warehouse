@@ -54,9 +54,7 @@ export default {
   }
   .material{
     width: 100%;
-    height: 100%;
     box-sizing: border-box;
-    overflow-y:scroll;
   }
   .materialItem{
     text-align: left;
