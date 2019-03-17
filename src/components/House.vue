@@ -13,13 +13,55 @@
                     <template v-else>
                       <img src="../assets/box.png" alt="">
                     </template>
-                </a>-->
+                </a>
+               -->
                 <a  href="javascript:void(0);"  v-if="c.isactive" v-tooltip.notrigger="{ content: c.shelfname+'货架'+c.detailrow+'层'+c.detailcolumn+'列'+c.detailno+'号', visible: c.isactive}">
-                  <img src="../assets/boxactive.gif" alt="">
-              </a>
-              <a  href="javascript:void(0);"  v-else>
-                <img src="../assets/box.png" alt="">
-              </a>
+                   <img v-if="c.detailrow==1&&c.detailno==1&&(c.shelfname=='A'||c.shelfname=='B'||c.shelfname=='C'||c.shelfname=='D'||c.shelfname=='E')" src="../assets/box/four/box1-1.gif" alt="">
+                   <img v-if="c.detailrow==1&&c.detailno==2&&(c.shelfname=='A'||c.shelfname=='B'||c.shelfname=='C'||c.shelfname=='D'||c.shelfname=='E')" src="../assets/box/four/box1-2.gif" alt="">
+                   <img v-if="c.detailrow==1&&c.detailno==3&&(c.shelfname=='A'||c.shelfname=='B'||c.shelfname=='C'||c.shelfname=='D'||c.shelfname=='E')" src="../assets/box/four/box1-3.gif" alt="">
+                   <img v-if="c.detailrow==1&&c.detailno==4&&(c.shelfname=='A'||c.shelfname=='B'||c.shelfname=='C'||c.shelfname=='D'||c.shelfname=='E')" src="../assets/box/four/box1-4.gif" alt="">
+
+                   <img v-if="c.detailrow==2&&c.detailno==1&&(c.shelfname=='A'||c.shelfname=='B'||c.shelfname=='C'||c.shelfname=='D'||c.shelfname=='E')" src="../assets/box/four/box2-1.gif" alt="">
+                   <img v-if="c.detailrow==2&&c.detailno==2&&(c.shelfname=='A'||c.shelfname=='B'||c.shelfname=='C'||c.shelfname=='D'||c.shelfname=='E')" src="../assets/box/four/box2-2.gif" alt="">
+                   <img v-if="c.detailrow==2&&c.detailno==3&&(c.shelfname=='A'||c.shelfname=='B'||c.shelfname=='C'||c.shelfname=='D'||c.shelfname=='E')" src="../assets/box/four/box2-3.gif" alt="">
+                   <img v-if="c.detailrow==2&&c.detailno==4&&(c.shelfname=='A'||c.shelfname=='B'||c.shelfname=='C'||c.shelfname=='D'||c.shelfname=='E')" src="../assets/box/four/box2-4.gif" alt="">
+
+                   <img v-if="c.detailrow==3&&c.detailno==1&&(c.shelfname=='A'||c.shelfname=='B'||c.shelfname=='C'||c.shelfname=='D'||c.shelfname=='E')" src="../assets/box/four/box3-1.gif" alt="">
+                   <img v-if="c.detailrow==3&&c.detailno==2&&(c.shelfname=='A'||c.shelfname=='B'||c.shelfname=='C'||c.shelfname=='D'||c.shelfname=='E')" src="../assets/box/four/box3-2.gif" alt="">
+                   <img v-if="c.detailrow==3&&c.detailno==3&&(c.shelfname=='A'||c.shelfname=='B'||c.shelfname=='C'||c.shelfname=='D'||c.shelfname=='E')" src="../assets/box/four/box3-3.gif" alt="">
+                   <img v-if="c.detailrow==3&&c.detailno==4&&(c.shelfname=='A'||c.shelfname=='B'||c.shelfname=='C'||c.shelfname=='D'||c.shelfname=='E')" src="../assets/box/four/box3-4.gif" alt="">
+
+
+                   <img v-if="c.detailrow==4&&c.detailno==1&&(c.shelfname=='A'||c.shelfname=='B'||c.shelfname=='C'||c.shelfname=='D'||c.shelfname=='E')" src="../assets/box/four/box4-1.gif" alt="">
+                   <img v-if="c.detailrow==4&&c.detailno==2&&(c.shelfname=='A'||c.shelfname=='B'||c.shelfname=='C'||c.shelfname=='D'||c.shelfname=='E')" src="../assets/box/four/box4-2.gif" alt="">
+                   <img v-if="c.detailrow==4&&c.detailno==3&&(c.shelfname=='A'||c.shelfname=='B'||c.shelfname=='C'||c.shelfname=='D'||c.shelfname=='E')" src="../assets/box/four/box4-3.gif" alt="">
+                   <img v-if="c.detailrow==4&&c.detailno==4&&(c.shelfname=='A'||c.shelfname=='B'||c.shelfname=='C'||c.shelfname=='D'||c.shelfname=='E')" src="../assets/box/four/box4-4.gif" alt="">
+
+                  <img v-if="c.detailrow==1&&c.detailno==1&&(c.shelfname=='F'||c.shelfname=='G'||c.shelfname=='H')" src="../assets/box/three/box1-1.gif" alt="">
+                  <img v-if="c.detailrow==1&&c.detailno==2&&(c.shelfname=='F'||c.shelfname=='G'||c.shelfname=='H')" src="../assets/box/three/box1-2.gif" alt="">
+                  <img v-if="c.detailrow==1&&c.detailno==3&&(c.shelfname=='F'||c.shelfname=='G'||c.shelfname=='H')" src="../assets/box/three/box1-3.gif" alt="">
+                  <img v-if="c.detailrow==1&&c.detailno==4&&(c.shelfname=='F'||c.shelfname=='G'||c.shelfname=='H')" src="../assets/box/three/box1-4.gif" alt="">
+
+
+                  <img v-if="c.detailrow==2&&c.detailno==1&&(c.shelfname=='F'||c.shelfname=='G'||c.shelfname=='H')" src="../assets/box/three/box2-1.gif" alt="">
+                  <img v-if="c.detailrow==2&&c.detailno==2&&(c.shelfname=='F'||c.shelfname=='G'||c.shelfname=='H')" src="../assets/box/three/box2-2.gif" alt="">
+                  <img v-if="c.detailrow==2&&c.detailno==3&&(c.shelfname=='F'||c.shelfname=='G'||c.shelfname=='H')" src="../assets/box/three/box2-3.gif" alt="">
+                  <img v-if="c.detailrow==2&&c.detailno==4&&(c.shelfname=='F'||c.shelfname=='G'||c.shelfname=='H')" src="../assets/box/three/box2-4.gif" alt="">
+
+
+                  <img v-if="c.detailrow==3&&c.detailno==1&&(c.shelfname=='F'||c.shelfname=='G'||c.shelfname=='H')" src="../assets/box/three/box3-1.gif" alt="">
+                  <img v-if="c.detailrow==3&&c.detailno==2&&(c.shelfname=='F'||c.shelfname=='G'||c.shelfname=='H')" src="../assets/box/three/box3-2.gif" alt="">
+                  <img v-if="c.detailrow==3&&c.detailno==3&&(c.shelfname=='F'||c.shelfname=='G'||c.shelfname=='H')" src="../assets/box/three/box3-3.gif" alt="">
+                  <img v-if="c.detailrow==3&&c.detailno==4&&(c.shelfname=='F'||c.shelfname=='G'||c.shelfname=='H')" src="../assets/box/three/box3-4.gif" alt="">
+                </a>
+
+                <a  href="javascript:void(0);"  :title="item.line" v-else-if="item.line=='A'||item.line=='B'||item.line=='C'||item.line=='D'||item.line=='E'">
+                  <img src="../assets/box/four.png" alt="">
+                </a>
+                <a  href="javascript:void(0);"  :title="item.line" v-else="item.line=='F'||item.line=='G'||item.line=='H'">
+                  <img src="../assets/box/three.png" alt="">
+                </a>
+
             </li>
           </ul>
       </li>
@@ -568,7 +610,7 @@
    clear: both;
  }
   .houseItems{
-    padding-left: 15rem;
+    padding-left: 10rem;
     padding-bottom: 10rem;
     padding-top: 0.5rem;
     display: inline-block;
@@ -576,15 +618,15 @@
   .houseItems .houseItem{
     float: left;
   }
-  .houseItem{
+  /*.houseItem{
     margin-right: 1rem;
-  }
+  }*/
   .box{
     display:inline-block;
-    transform:rotate(-20deg);
+    transform:rotate(-15deg);
   }
   .boxItem img{
-    width: 5rem;
+    width: 7rem;
     height: 8rem;
 /*  margin-right: 0.2rem;
     margin-left: 5rem;*/
@@ -597,29 +639,29 @@
  }
 
   .boxItem{
-    margin-right: 1rem;
-   /* margin-bottom: -3rem;*/
+    /* margin-right: 1rem;
+     margin-bottom: -3rem;*/
   }
 
   .boxItem2 {
-    margin-left: -6rem;
-    margin-top: -6rem;
+    margin-left: -5.2rem;
+    margin-top: -6.5rem;
   }
  .boxItem3 {
-   margin-left: -12rem;
-   margin-top: -6rem;
+   margin-left: -10.2rem;
+   margin-top: -6.5rem;
  }
  .boxItem4 {
-   margin-left: -18rem;
-   margin-top: -6rem;
+   margin-left: -15.2rem;
+   margin-top: -6.5rem;
  }
  .boxItem5 {
-   margin-left: -24rem;
-   margin-top: -6rem;
+   margin-left: -20.2rem;
+   margin-top: -6.5rem;
  }
   .boxItem6 {
-    margin-left: -30rem;
-    margin-top: -6rem;
+    margin-left: -25.2rem;
+    margin-top: -6.5rem;
   }
  .computer li{
    float: left;
