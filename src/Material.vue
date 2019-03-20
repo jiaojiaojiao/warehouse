@@ -24,12 +24,13 @@
         </div>
         <div
             class="anchor-line"
-            v-for="(item, idx) in calPointList"
+            v-for="(item, idx) in calLinePointList"
             :key="idx+'line'"
             :style="calStyle(item)"
           >
           <img
             v-if="idx >= 1"
+            v-show="isLineActive(idx)"
             :ref="`line${idx}`"
             :src="require(`./assets/map/line${idx + 1}.png`)"
             alt="l"
@@ -53,8 +54,16 @@ const pointList = [
   [579, 660],
   [593, 194],
   [601, -489],
-  [-287, 180],
-  [-677, -687]
+  [-677, -687],
+  [-287, 180]
+];
+//线的定位点，统一实现left：0，top：0，四五两点都基于点4定位
+const linePointList = [
+  [579, 660],
+  [593, 194],
+  [601, -489],
+  [-677, -687],
+  [-677, -687],
 ];
 const headerTitle = { monitor: "在途监控", management: "任务配送管理" };
 const defaultW = 3000;
@@ -89,6 +98,12 @@ export default {
         const { imgprop } = this;
         return [item[0] / imgprop, item[1] / imgprop];
       });
+    },
+    calLinePointList: function() {
+      return linePointList.map(item => {
+        const { imgprop } = this;
+        return [item[0] / imgprop, item[1] / imgprop];
+      });
     }
   },
   mounted() {
@@ -116,7 +131,6 @@ export default {
 
           this.$refs[key][0].style.visibility = "visible";
           if (width) {
-            console.warn(width, this.imgprop);
             this.$refs[key][0].width = width / this.imgprop;
           }
         }
@@ -142,30 +156,21 @@ export default {
         coordinate[1]
       }px)`;
     },
-    calLineWidth(idx) {
-      const $refs = this.$refs;
-      if (Object.keys($refs).length && this.$refs[`line${idx}`]) {
-        const width = this.$refs[`line${idx}`][0].clientWidth;
-        console.warn(width, `line${idx}`, this.$refs[`line${idx}`][0]);
-        if (width) {
-          return `translate: scale(${width / this.imgprop})`;
-        } else {
-          return `translate: scale(1)`;
-        }
-        // if (this.$refs[`line${idx + 1}`]) {
-        //   const width = this.$refs[`line${idx + 1}`][0].clientWidth;
-        //   console.log(width / this.imgprop);
-        //   if (width) {
-        //     return `width: ${width / this.imgprop}`;
-        //   }
-        // }
-      }
-    },
     isPointActive(idx) {
       return (
         this.activePoint.TrajectoryList &&
         this.activePoint.TrajectoryList[0].readerid.includes(idx + 1)
       );
+    },
+    isLineActive(idx) {
+      const traData = this.activePoint.TrajectoryList
+      if(traData && traData.length > 1) {
+        const res = traData.find((item, index) => {
+          return index<traData.length - 1 && item.readerid.includes(idx + 1)
+        })
+        return res
+      }
+      return false
     },
     querydata() {
       const _this = this;
@@ -234,6 +239,10 @@ export default {
 }
 .anchor-line {
   position: relative;
+  width: 0;
+  height: 0;
+  left: -5px;
+  top: -5px;
 }
 .anchor-line img {
   visibility: hidden;
