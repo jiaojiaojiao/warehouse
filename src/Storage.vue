@@ -64,7 +64,6 @@
           const setMaterial = () => {
             if(i < length){
               _this.MaterialList=res.Entity[i].MaterialList
-              console.log(_this.MaterialList)
               _this.Receiveunit=res.Entity[i].receiveunit
               setTimeout(setMaterial, 5000)
               i++
