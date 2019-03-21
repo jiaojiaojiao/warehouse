@@ -241,8 +241,8 @@ export default {
   position: relative;
   width: 0;
   height: 0;
-  left: -5px;
-  top: -5px;
+  left: -10px;
+  top: -15px;
 }
 .anchor-line img {
   visibility: hidden;

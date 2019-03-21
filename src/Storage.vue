@@ -32,7 +32,8 @@
         companyList:[],//单位列表
         MaterialList:[],//货物列表
         Receiveunit:"",//接收单位
-        queryInterval: null
+        queryInterval: null,
+        time:20000//刷新数据时间
       }
     },
     components: {
@@ -47,110 +48,8 @@
     mounted() {
       const _this = this
       _this.querydata()
-      _this.queryInterval = window.setInterval(_this.querydata, 20000)
-      /*_this.storageDate = {
-        "Entity": [
-          {
-            "taskid": "25",
-            "outwasecode": "100002",
-            "receiveunit": "4",
-            "unitaddress": "4",
-            "contactman": "4",
-            "contactphone": "15310671012",
-            "carlicense": "渝AK1234",
-            "MaterialList": [
-              {
-                "tmaterialid": "26",
-                "materialname": "野战器材箱",
-                "materialtypename": "办公物资",
-                "materialcount": "5",
-                "materialmode": "规格1*0.6*0.5",
-                "boxid": "6",
-                "boxname": "3号容器",
-                "boxrfid": "373737323536633430383266",
-                "shelfid": "11",
-                "shelfname": "3号货架",
-                "shelfdetailid": "481",
-                "shelfdetailrfid": "633065353230336237623064",
-                "detailrow": "1",
-                "detailcolumn": "1",
-                "detailno": "1"
-              },
-              {
-                "tmaterialid": "27",
-                "materialname": "野战器材箱11",
-                "materialtypename": "办公物资",
-                "materialcount": "5",
-                "materialmode": "规格1*0.6*0.5",
-                "boxid": "6",
-                "boxname": "3号容器",
-                "boxrfid": "373737323536633430383266",
-                "shelfid": "11",
-                "shelfname": "3号货架",
-                "shelfdetailid": "481",
-                "shelfdetailrfid": "633065353230336237623064",
-                "detailrow": "2",
-                "detailcolumn": "2",
-                "detailno": "1"
-              }
-            ]
-          },
-          {
-            "taskid": "26",
-            "outwasecode": "100003",
-            "receiveunit": "6",
-            "unitaddress": "6",
-            "contactman": "6",
-            "contactphone": "15310671012",
-            "carlicense": "渝AK1234",
-            "MaterialList": [
-              {
-                "tmaterialid": "26",
-                "materialname": "野战器材箱",
-                "materialtypename": "办公物资",
-                "materialmode": "规格1*0.6*0.5",
-                "materialcount": "5",
-                "boxid": "6",
-                "boxname": "3号容器",
-                "boxrfid": "373737323536633430383266",
-                "shelfid": "11",
-                "shelfname": "3号货架",
-                "shelfdetailid": "481",
-                "shelfdetailrfid": "633065353230336237623064",
-                "detailrow": "1",
-                "detailcolumn": "1",
-                "detailno": "1"
-              },
-              {
-                "tmaterialid": "27",
-                "materialname": "打印机",
-                "materialtypename": "办公物资",
-                "materialmode": "佳能",
-                "materialcount": "5",
-                "boxid": "",
-                "boxname": "",
-                "boxrfid": "",
-                "shelfid": "9",
-                "shelfname": "1号货架",
-                "shelfdetailid": "242",
-                "shelfdetailrfid": "000000000000000000000033",
-                "detailrow": "1",
-                "detailcolumn": "1",
-                "detailno": "2"
-              }
-            ]
-          }
-        ],
-        "Extend": null,
-        "IsSucceed": true,
-        "Message": null,
-        "TotalCount": 0,
-        "TotalCurr": 0,
-        "userid": 0,
-        "username": null
-      }*/
-    /*  console.log('aa')
-      console.log( _this.storageDate)*/
+      /* _this.queryInterval = window.setInterval(_this.querydata, 20000)*/
+
     },
     methods: {
       querydata(){
@@ -159,123 +58,20 @@
           url: 'API/VehicleMonitor/OutWareH5Query.ashx',
           method: 'post'
         }).then(res => {
-         /* console.log('aaa')
-          console.log(res)*/
-          /*res = {
-           "Entity": [
-           {
-           "taskid": "25",
-           "outwasecode": "100002",
-           "receiveunit": "4",
-           "unitaddress": "4",
-           "contactman": "4",
-           "contactphone": "15310671012",
-           "carlicense": "渝AK1234",
-           "MaterialList": [
-           {
-           "tmaterialid": "26",
-           "materialname": "野战器材箱",
-           "materialtypename": "办公物资",
-           "materialcount": "5",
-           "materialmode": "规格1*0.6*0.5",
-           "boxid": "6",
-           "boxname": "3号容器",
-           "boxrfid": "373737323536633430383266",
-           "shelfid": "11",
-           "shelfname": "3号货架",
-           "shelfdetailid": "481",
-           "shelfdetailrfid": "633065353230336237623064",
-           "detailrow": "1",
-           "detailcolumn": "1",
-           "detailno": "1"
-           },
-           {
-           "tmaterialid": "27",
-           "materialname": "野战器材箱11",
-           "materialtypename": "办公物资",
-           "materialcount": "5",
-           "materialmode": "规格1*0.6*0.5",
-           "boxid": "6",
-           "boxname": "3号容器",
-           "boxrfid": "373737323536633430383266",
-           "shelfid": "11",
-           "shelfname": "3号货架",
-           "shelfdetailid": "481",
-           "shelfdetailrfid": "633065353230336237623064",
-           "detailrow": "2",
-           "detailcolumn": "2",
-           "detailno": "1"
-           }
-           ]
-           },
-           {
-           "taskid": "26",
-           "outwasecode": "100003",
-           "receiveunit": "6",
-           "unitaddress": "6",
-           "contactman": "6",
-           "contactphone": "15310671012",
-           "carlicense": "渝AK1234",
-           "MaterialList": [
-           {
-           "tmaterialid": "26",
-           "materialname": "野战器材箱",
-           "materialtypename": "办公物资",
-           "materialmode": "规格1*0.6*0.5",
-           "materialcount": "5",
-           "boxid": "6",
-           "boxname": "3号容器",
-           "boxrfid": "373737323536633430383266",
-           "shelfid": "11",
-           "shelfname": "3号货架",
-           "shelfdetailid": "481",
-           "shelfdetailrfid": "633065353230336237623064",
-           "detailrow": "1",
-           "detailcolumn": "1",
-           "detailno": "1"
-           },
-           {
-           "tmaterialid": "27",
-           "materialname": "打印机",
-           "materialtypename": "办公物资",
-           "materialmode": "佳能",
-           "materialcount": "5",
-           "boxid": "",
-           "boxname": "",
-           "boxrfid": "",
-           "shelfid": "9",
-           "shelfname": "1号货架",
-           "shelfdetailid": "242",
-           "shelfdetailrfid": "000000000000000000000033",
-           "detailrow": "1",
-           "detailcolumn": "1",
-           "detailno": "2"
-           }
-           ]
-           }
-           ],
-           "Extend": null,
-           "IsSucceed": true,
-           "Message": null,
-           "TotalCount": 0,
-           "TotalCurr": 0,
-           "userid": 0,
-           "username": null
-           }*/
           this.storageDate=res
-          /*this.showMaterlList(res,0)*/
           const length = res.Entity.length
           var i = 0
           const setMaterial = () => {
-            if(i < length-1){
-              i=i+1
+            if(i < length){
+              _this.MaterialList=res.Entity[i].MaterialList
+              console.log(_this.MaterialList)
+              _this.Receiveunit=res.Entity[i].receiveunit
+              setTimeout(setMaterial, 5000)
+              i++
             }
             else {
-              i=0
+              _this.querydata();
             }
-            _this.MaterialList=res.Entity[i].MaterialList
-            _this.Receiveunit=res.Entity[i].receiveunit
-            setTimeout(setMaterial, 6000)
           }
           setMaterial();
         })
