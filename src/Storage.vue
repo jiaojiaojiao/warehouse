@@ -1,11 +1,11 @@
 <template>
   <layout>
     <menu-item slot="header" :title-list="headerTitle"></menu-item>
-    <storage-item slot="left-bar" :material-list="MaterialList" ></storage-item>
+    <storage-item slot="left-bar" :material-list="MaterialList"></storage-item>
     <!--<div class="bottom" slot="bottom-bar">
       <company-item :company-list="companyList" :receiveunit="Receiveunit"></company-item>
     </div>-->
-    <house-item slot="container" :material-list="MaterialList"></house-item>
+    <house-item slot="container" :material="Material"></house-item>
     <dialog-bar slot="dialog-bar"></dialog-bar>
     <title-left slot="left-menu" :receiveunit="Receiveunit"></title-left>
     <title-right slot="right-menu"></title-right>
@@ -22,18 +22,19 @@
   import titleRight from './components/TitleRight.vue'
 
   import ajax from './utils/ajax'
-  const headerTitle={input: '入库',output: '出库',storage: '仓库'}
+  const headerTitle = {input: '入库', output: '出库', storage: '仓库'}
 
   export default {
     data() {
       return {
         headerTitle,
         storageDate: [],
-        companyList:[],//单位列表
-        MaterialList:[],//货物列表
-        Receiveunit:"",//接收单位
+        companyList: [],//单位列表
+        MaterialList: [],//货物列表
+        Material:'',
+        Receiveunit: "",//接收单位
         queryInterval: null,
-        time:20000//刷新数据时间
+        time: 20000//刷新数据时间
       }
     },
     components: {
@@ -53,19 +54,28 @@
     },
     methods: {
       querydata(){
-        const _this = this
+        const _this = this;
         ajax({
           url: 'API/VehicleMonitor/OutWareH5Query.ashx',
           method: 'post'
         }).then(res => {
-          this.storageDate=res
+          this.storageDate = res
           const length = res.Entity.length
           var i = 0
           const setMaterial = () => {
-            if(i < length){
-              _this.MaterialList=res.Entity[i].MaterialList
-              _this.Receiveunit=res.Entity[i].receiveunit
-              setTimeout(setMaterial, 5000)
+            var time = 0;
+            if (i < length) {
+              var mater_length = res.Entity[i].MaterialList.length;
+              var time_len = 6000 / mater_length;
+              _this.MaterialList=res.Entity[i].MaterialList;
+              res.Entity[i].MaterialList.forEach(mater=> {
+                setTimeout(function () {
+                  _this.Material = mater
+                }, time);
+                time += time_len
+              })
+              _this.Receiveunit = res.Entity[i].receiveunit
+              setTimeout(setMaterial, 6000)
               i++
             }
             else {
@@ -75,14 +85,14 @@
           setMaterial();
         })
       },
-      showMaterlList(res,index){
+      showMaterlList(res, index){
         const _this = this
-        if(res.IsSucceed){
+        if (res.IsSucceed) {
           res.Entity.map(item => {
             _this.companyList.push(item.receiveunit)
           })
-          _this.MaterialList=res.Entity[index].MaterialList
-          _this.Receiveunit=res.Entity[index].receiveunit
+          _this.MaterialList = res.Entity[index].MaterialList
+          _this.Receiveunit = res.Entity[index].receiveunit
         }
       }
     },
@@ -92,16 +102,16 @@
   }
 </script>
 <style scoped>
-  .bottom{
+  .bottom {
     margin-top: 1.5rem;
     padding: 1rem;
     height: 10rem;
     /*border: 2px solid #a8ffff;*/
-   /* border-radius: 1rem;*/
+    /* border-radius: 1rem;*/
     /*background-color: #041f4f;*/
     box-sizing: border-box;
     overflow-y: auto;
-    background:no-repeat url("assets/companybg.png");
-    background-size: 100%  97%;
+    background: no-repeat url("assets/companybg.png");
+    background-size: 100% 97%;
   }
 </style>

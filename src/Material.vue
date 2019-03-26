@@ -198,7 +198,7 @@ export default {
             _this.querydata();
           }
         };
-        setMaterial();
+        /*setMaterial();*/
         // _this.activePoint = res.Entity
       });
     }
@@ -242,7 +242,7 @@ export default {
   width: 0;
   height: 0;
   left: -10px;
-  top: -15px;
+  top: -12px;
 }
 .anchor-line img {
   visibility: hidden;
