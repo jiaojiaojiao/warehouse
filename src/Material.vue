@@ -29,8 +29,9 @@
             :style="calStyle(item)"
           >
           <img
-            v-if="idx >= 1"
+            v-if="idx < calLinePointList.length - 1"
             v-show="isLineActive(idx)"
+            :class="isLineActive(idx) ? 'active' : ''"
             :ref="`line${idx}`"
             :src="require(`./assets/map/line${idx + 1}.png`)"
             alt="l"
@@ -51,19 +52,19 @@ import titleRight from "./components/TitleRight.vue";
 import ajax from "./utils/ajax";
 
 const pointList = [
-  [579, 660],
-  [593, 194],
-  [601, -489],
+  [-287, 180],
   [-677, -687],
-  [-287, 180]
+  [601, -489],
+  [593, 194],
+  [579, 660]
 ];
-//线的定位点，统一实现left：0，top：0，四五两点都基于点4定位
+//线的定位点，统一实现left：0，top：0，12两点都基于点4定位
 const linePointList = [
-  [579, 660],
-  [593, 194],
-  [601, -489],
-  [-677, -687],
-  [-677, -687],
+  [-695, -685],
+  [-675, -703],
+  [595, -480],
+  [580, 194],
+  [579, 660]
 ];
 const headerTitle = { monitor: "在途监控", management: "任务配送管理" };
 const defaultW = 3000;
@@ -166,9 +167,9 @@ export default {
       const traData = this.activePoint.TrajectoryList
       if(traData && traData.length > 1) {
         const res = traData.find((item, index) => {
-          return index<traData.length - 1 && item.readerid.includes(idx + 1)
+          return index<traData.length && item.readerid.includes(idx + 1)
         })
-        return res
+        return !(!res)
       }
       return false
     },
@@ -198,7 +199,7 @@ export default {
             _this.querydata();
           }
         };
-        /*setMaterial();*/
+        setMaterial();
         // _this.activePoint = res.Entity
       });
     }
@@ -236,16 +237,20 @@ export default {
 }
 .anchor-cont {
   position: relative;
+  z-index: 100;
 }
 .anchor-line {
   position: relative;
   width: 0;
   height: 0;
-  left: -10px;
-  top: -12px;
+  left: -.1rem;
+  top: -.1rem;
 }
 .anchor-line img {
   visibility: hidden;
+}
+.anchor-line img.active{
+  animation: pulse 1.5s ease-in infinite;
 }
 .tip {
   position: absolute;
@@ -257,5 +262,13 @@ export default {
   font-size: 2.2rem;
   color: #ffffff;
   background-color: rgba(88, 246, 240, 0.5);
+}
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .5;
+  }
 }
 </style>
