@@ -1,7 +1,11 @@
 <template>
   <layout>
     <menu-item slot="header" :title-list="headerTitle"></menu-item>
-    <material-item slot="left-bar" :materialData="allPoint"></material-item>
+    <material-item
+      slot="left-bar"
+      :materialData="allPoint"
+      :getMaterialDetail="getMaterialDetail"
+    ></material-item>
     <div slot="container" class="map" ref="mapWrap">
       <img
         class="map-bg"
@@ -21,6 +25,7 @@
             v-show="isPointActive(idx)"
           >{{isPointActive(idx) && activePoint.licenseplate}}</div>
           <div :class="['pulse', isPointActive(idx) ? 'active' : '']"></div>
+          <div class="order">{{pointOrder(idx)}}</div>
         </div>
         <div
             class="anchor-line"
@@ -28,8 +33,8 @@
             :key="idx+'line'"
             :style="calStyle(item)"
           >
+            <!-- v-if="idx < calLinePointList.length" -->
           <img
-            v-if="idx < calLinePointList.length - 1"
             v-show="isLineActive(idx)"
             :class="isLineActive(idx) ? 'active' : ''"
             :ref="`line${idx}`"
@@ -38,6 +43,12 @@
           >
         </div>
       </div>
+      <material-detail
+        :isModalDisable="isModalDisable"
+        :setModalDisable="setModalDisable"
+        :materialDetail="materialDetail"
+      >
+      </material-detail>
     </div>
     <title-right slot="right-menu" :linkObj="linkObj"></title-right>
   </layout>
@@ -48,6 +59,7 @@ import materialItem from "./components/MaterialItem.vue";
 import companyItem from "./components/CompanyItem.vue";
 import titleLeft from "./components/TitleLeft.vue";
 import titleRight from "./components/TitleRight.vue";
+import materialDetail from "./components/MaterialDetail"
 
 import ajax from "./utils/ajax";
 
@@ -58,13 +70,13 @@ const pointList = [
   [593, 194],
   [579, 660]
 ];
-//线的定位点，统一实现left：0，top：0，12两点都基于点4定位
+//线的定位点，统一实现left：0，top：0，12两线都基于点2定位
 const linePointList = [
   [-695, -685],
   [-675, -703],
   [595, -480],
   [580, 194],
-  [579, 660]
+  [-133, 183]
 ];
 const headerTitle = { monitor: "在途监控", management: "任务配送管理" };
 const defaultW = 3000;
@@ -78,12 +90,19 @@ export default {
       imgprop: 1,
       allPoint: [],
       activePoint: {},
+      activeLine: [],
       headerTitle,
       queryInterval: null,
       linkObj: {
         link: "#/storage",
         title: "出库物资一览"
-      }
+      },
+      isModalDisable: false,
+      materialDetail: {
+          carname: '',
+          licenseplate: '',
+          MaterialList: []
+        }
     };
   },
   components: {
@@ -91,7 +110,8 @@ export default {
     materialItem,
     companyItem,
     titleRight,
-    titleLeft
+    titleLeft,
+    materialDetail
   },
   computed: {
     calPointList: function() {
@@ -105,6 +125,19 @@ export default {
         const { imgprop } = this;
         return [item[0] / imgprop, item[1] / imgprop];
       });
+    },
+    calActiveLine: function() {
+      const activeLine = this.activeLine
+      //[2,3,4] => [23,34];[3,2] => [23];
+      return activeLine.reduce((total, curr, index) => {
+        if(index){
+          const last = activeLine[index - 1]
+          const arr = [last, curr]
+          total.push(arr.sort().join(''))
+          return total
+        }
+        return []
+      },[]) || []
     }
   },
   mounted() {
@@ -115,7 +148,13 @@ export default {
 
     // dom ready
     _this.changeImageWidth();
-    // console.warn($refs)
+
+    // document.addEventListener('mouseup',function(e){
+    //   console.log(e)
+    //   if(!e.target.innerHTML.contains(e.target)){
+    //     _this.setModalDisable(false)
+    //   }
+    // })
   },
   updated() {
     this.changeImageWidth();
@@ -157,21 +196,24 @@ export default {
         coordinate[1]
       }px)`;
     },
+    pointOrder(idx) {
+      const traData = this.activePoint.TrajectoryList
+      const res = traData && traData.filter(item => item.pointNum == idx + 1)
+      return res ? res.reduce((total, curr) => {
+        return total ? `${total}.${curr.order}` : curr.order
+      },'') : ''
+    },
     isPointActive(idx) {
+      const traData = this.activePoint.TrajectoryList
       return (
-        this.activePoint.TrajectoryList &&
-        this.activePoint.TrajectoryList[0].readerid.includes(idx + 1)
+        traData &&
+        traData[traData.length - 1].pointNum == idx + 1
       );
     },
     isLineActive(idx) {
-      const traData = this.activePoint.TrajectoryList
-      if(traData && traData.length > 1) {
-        const res = traData.find((item, index) => {
-          return index<traData.length && item.readerid.includes(idx + 1)
-        })
-        return !(!res)
-      }
-      return false
+      //第五点，14线
+      const lineActive = idx < 4 ? `${idx+1}${idx+2}` : '14'
+      return this.calActiveLine.includes(lineActive)
     },
     querydata() {
       const _this = this;
@@ -190,8 +232,15 @@ export default {
           if (i < length) {
             _this.allPoint = res.Entity;
             _this.activePoint = res.Entity[i];
-            // const trajectoryList = res.Entity[i].TrajectoryList
-            // _this.activePoint=trajectoryList[0]
+            _this.activePoint.TrajectoryList = _this.activePoint.TrajectoryList.reverse()
+            _this.activeLine = []
+            _this.activePoint.TrajectoryList.map((curr, index) => {
+              const pointNum = Number(curr.readerid)/11;
+              _this.activePoint.TrajectoryList[index].order = index + 1;
+              _this.activePoint.TrajectoryList[index].pointNum = pointNum;
+              _this.activeLine.push(pointNum);
+            })
+            // console.warn(_this.activePoint, _this.activeLine)
             setTimeout(setMaterial, 5000);
             i++;
           } else {
@@ -200,8 +249,23 @@ export default {
           }
         };
         setMaterial();
-        // _this.activePoint = res.Entity
       });
+    },
+    getMaterialDetail(licenseplate){
+      const _this = this
+      ajax({
+        url: "API/VehicleMonitor/GetOutMaterialByCar.ashx",
+        method: "post",
+        data: JSON.stringify({
+          licenseplate
+        })
+      }).then(res => {
+        _this.setModalDisable(true);
+        _this.materialDetail = res.Entity;
+      })
+    },
+    setModalDisable(boolean){
+      this.isModalDisable = boolean
     }
   },
   destroyed() {
@@ -262,6 +326,13 @@ export default {
   font-size: 2.2rem;
   color: #ffffff;
   background-color: rgba(88, 246, 240, 0.5);
+}
+.order{
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.4rem;
+  color: red;
 }
 @keyframes pulse {
   0% {

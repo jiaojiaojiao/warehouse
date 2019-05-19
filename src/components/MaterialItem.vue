@@ -2,7 +2,12 @@
 <template>
   <div class="material">
    <ul>
-      <li v-for="(item,key) in materialData" class="materialItem" :key="key">
+      <li
+        v-for="(item,key) in materialData"
+        class="materialItem"
+        @click="getMaterialDetail(item.licenseplate)"
+        :key="key"
+      >
         <div class="materialTitle">
           {{item.TrajectoryList[0].licenseplate}}
           <div class="triangleBorder titleLeft">
@@ -35,7 +40,7 @@ const materialName = {
 }
 export default {
   name: 'MaterialItem',
-  props: ['materialData'],
+  props: ['materialData', 'getMaterialDetail'],
   data () {
     return {
       materialName
@@ -64,6 +69,7 @@ export default {
   .materialItem{
     text-align: left;
     margin-bottom: 1.5rem;
+    cursor: pointer;
   }
   .materialTitle {
     font-size: 1rem;
