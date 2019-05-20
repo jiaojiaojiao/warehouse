@@ -36,7 +36,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: #07337b;
+    background-color: rgb(7, 51, 123);
     background-image: no-repeat url('../assets/bg.png');
   }
   header{

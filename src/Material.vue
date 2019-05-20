@@ -331,8 +331,8 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  font-size: 1.4rem;
-  color: red;
+  font-size: 1.6rem;
+  color: #ffffff;
 }
 @keyframes pulse {
   0% {

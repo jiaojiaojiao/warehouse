@@ -7,6 +7,7 @@ import baseStyle from './assets/styles/base.css';
 import layout from "./components/Layout.vue";
 import Tooltip from 'vue-directive-tooltip';
 import 'vue-directive-tooltip/css/index.css';
+import './assets/styles/niceScroll.css';
 Vue.use(Tooltip);
 
 Vue.config.productionTip = false
